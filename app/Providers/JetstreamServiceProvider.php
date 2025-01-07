@@ -29,7 +29,7 @@ class JetstreamServiceProvider extends ServiceProvider
         $this->configurePermissions();
 
         Jetstream::deleteUsersUsing(DeleteUser::class);
-/*
+
         Fortify::authenticateUsing(function (Request $request) {
             $provider = new MoodleUserProvider();
             // dd("test");
@@ -62,7 +62,7 @@ class JetstreamServiceProvider extends ServiceProvider
             // }
         });
 
-        */
+        
     }
 
     /**
