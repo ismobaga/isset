@@ -31,8 +31,8 @@ return [
 
     'middleware' => ['web'],
 
-    // 'auth_session' => AuthenticateSession::class,
-    'auth_session' => \NetworkRailBusinessSystems\LaravelMoodle\Middleware\MoodleToken::class,
+    'auth_session' => AuthenticateSession::class,
+    // 'auth_session' => \NetworkRailBusinessSystems\LaravelMoodle\Middleware\MoodleToken::class,
 
     /*
     |--------------------------------------------------------------------------
