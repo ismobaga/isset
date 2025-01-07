@@ -24,7 +24,8 @@ use App\Http\Controllers\CampaignController;
 
 Route::redirect('/', 'login');
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+Route::middleware(['laravel-moodle'])->group(function () {
+// Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // Route for the getting the data feed
     Route::get('/json-data-feed', [DataFeedController::class, 'getDataFeed'])->name('json_data_feed');
