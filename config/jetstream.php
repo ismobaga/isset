@@ -29,7 +29,8 @@ return [
      |
      */
 
-    'middleware' => ['web'],
+    // 'middleware' => ['web'],
+    'middleware' => ['laravel-moodle'],
 
     'auth_session' => AuthenticateSession::class,
     // 'auth_session' => \NetworkRailBusinessSystems\LaravelMoodle\Middleware\MoodleToken::class,
@@ -46,7 +47,7 @@ return [
     */
 
 // 'guard' => 'sanctum',
-    'guard' => 'users',
+    'guard' => 'web',
 
     /*
     |--------------------------------------------------------------------------
