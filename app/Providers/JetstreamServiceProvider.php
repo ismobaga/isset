@@ -29,16 +29,18 @@ class JetstreamServiceProvider extends ServiceProvider
         $this->configurePermissions();
 
         Jetstream::deleteUsersUsing(DeleteUser::class);
-
+/*
         Fortify::authenticateUsing(function (Request $request) {
             $provider = new MoodleUserProvider();
             // dd("test");
-            $user = User::where('username', $request->username)->firstOrNew();
+
+            $creds = $request->only(config('laravel-moodle.login_attribute'), 'password');
+            $user = $provider->retrieveByCredentials( $creds);
+            // $user = User::where('username', $request->username)->firstOrNew();
             
             // AttemptToAuthenticate
-            $creds = $request->only(config('laravel-moodle.login_attribute'), 'password');
             // $user = new User();
-            $user->username = $request->get(config('laravel-moodle.login_attribute'), '');
+            // $user->username = $request->get(config('laravel-moodle.login_attribute'), '');
             $rep = $provider->validateCredentials($user, $creds);
             // dump($user, $creds);
             // dump($request);
@@ -59,6 +61,8 @@ class JetstreamServiceProvider extends ServiceProvider
             //     return $user;
             // }
         });
+
+        */
     }
 
     /**

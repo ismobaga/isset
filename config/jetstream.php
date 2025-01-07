@@ -29,8 +29,8 @@ return [
      |
      */
 
-    // 'middleware' => ['web'],
-    'middleware' => ['laravel-moodle'],
+    'middleware' => ['web'],
+    // 'middleware' => ['laravel-moodle'],
 
     'auth_session' => AuthenticateSession::class,
     // 'auth_session' => \NetworkRailBusinessSystems\LaravelMoodle\Middleware\MoodleToken::class,

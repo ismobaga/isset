@@ -102,8 +102,8 @@ return [
     |
     */
 
-    // 'middleware' => ['web'],
-    'middleware' => ['laravel-moodle'],
+    'middleware' => ['web'],
+    // 'middleware' => ['laravel-moodle'],
 
     /*
     |--------------------------------------------------------------------------
