@@ -141,8 +141,7 @@
         <div data-aos="fade-up" class="bg-white shadow-xl p-6 text-center rounded-xl">
             <div style="background: #5B72EE;"
                 class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
-                <x-filament::icon icon="heroicon-o-academic-cap" class="h-6 w-6 text-white" />
-
+                <x-icon name="heroicon-o-academic-cap" class="h-6 w-6 text-white" />
             </div>
             <h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">Diplômes</h1>
             <p class="px-4 text-gray-500">Des diplômes d’Etat du Sénégal reconnus dans l’espace CEDEAO</p>
@@ -150,9 +149,7 @@
         <div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-xl p-6 text-center rounded-xl">
             <div style="background: #047857;"
                 class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
-                <x-filament::icon icon="heroicon-o-wrench-screwdriver" class="h-6 w-6 text-white" />
-
-
+                <x-icon name="heroicon-o-wrench-screwdriver" class="h-6 w-6 text-white" />
             </div>
             <h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">Equipement</h1>
             <p class="px-4 text-gray-500">Des équipements médicaux de pointe pour les travaux dirigés et les pratiques
@@ -161,7 +158,7 @@
         <div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-xl p-6 text-center rounded-xl">
             <div style="background: #29B9E7;"
                 class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
-                <x-filament::icon icon="heroicon-o-cog-8-tooth" class="h-6 w-6 text-white" />
+                <x-icon name="heroicon-o-cog-8-tooth" class="h-6 w-6 text-white" />
             </div>
             <h1 class="font-medium text-xl mb-3 lg:px-14 text-darken lg:h-14 pt-3">Système</h1>
             <p class="px-4 text-gray-500">Un système LMD favorisant la mobilité des étudiants au niveau national et
