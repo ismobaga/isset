@@ -25,7 +25,7 @@ use App\Livewire\HomePage;
 
 // Route::redirect('/', 'login');
 
-Route::get('/', HomePage::class);
+Route::get('/home', HomePage::class);
 
 
 Route::middleware(['laravel-moodle'])->group(function () {
