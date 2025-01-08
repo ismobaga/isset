@@ -119,7 +119,7 @@
         <h1 class="text-center mb-3 text-gray-400 font-medium">Nos partenaires</h1>
         <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center">
             
-            <!-- <x-curator-curation :media="1" curation="thumbnail" /> -->
+            {{-- <x-curator-curation :media="1" curation="thumbnail" /> --}}
             <img class="h-12" src="images/partners/10.png">
 
             <img class="h-12" src="images/partners/10.png">
