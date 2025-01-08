@@ -10,6 +10,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\CampaignController;
+use App\Livewire\HomePage;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,10 @@ use App\Http\Controllers\CampaignController;
 |
 */
 
-Route::redirect('/', 'login');
+// Route::redirect('/', 'login');
+
+Route::get('/', HomePage::class);
+
 
 Route::middleware(['laravel-moodle'])->group(function () {
 // Route::middleware(['auth:sanctum', 'verified'])->group(function () {
