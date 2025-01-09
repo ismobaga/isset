@@ -405,7 +405,7 @@
     </div>
     <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
         <div class="lg:w-6/12">
-            <img class="w-full mb-6" src="{{ Storage::disk('blog')->url($posts[0]->image) }}">
+            <img class="w-full mb-6" src="{{ url($posts[0]->image) }}">
             <span
                 class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">{{ $posts[0]->category->name }}</span>
             <h1 class="text-gray-800 font-semibold my-3 text-xl">{{ $posts[0]->title }} </h1>
@@ -418,7 +418,7 @@
                     <div class="w-4/12">
                         <div class="relative">
                             <img class="rounded-xl w-full max-h-40"
-                                src="{{ Storage::disk('blog')->url($posts[$i]->image) }}">
+                                src="{{ url($posts[$i]->image) }}">
                             <span
                                 class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">{{ $posts[$i]->category?->name }}</span>
                         </div>
