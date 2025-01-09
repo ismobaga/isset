@@ -403,6 +403,41 @@
         <h1 class="text-darken text-2xl font-semibold">Dernières nouvelles et ressources</h1>
         <p class="text-gray-500 my-5">Voir les développements survenus à l'ISEST dans le monde</p>
     </div>
+    @php
+    $posts = [
+        (object)[
+            'image' => 'images/post1.jpg',
+            'title' => 'Post 1',
+            'content' => 'Contenu du post 1',
+            'category' => (object)['name' => 'Catégorie 1']
+        ],
+        (object)[
+            'image' => 'images/post1.jpg',
+            'title' => 'Post 2',
+            'content' => 'Contenu du post 2',
+            'category' => (object)['name' => 'Catégorie 2']
+        ],
+        (object)[
+            'image' => 'images/post1.jpg',
+            'title' => 'Post 3',
+            'content' => 'Contenu du post 3',
+            'category' => (object)['name' => 'Catégorie 3']
+        ],
+        (object)[
+            'image' => 'images/post1.jpg',
+            'title' => 'Post 4',
+            'content' => 'Contenu du post 4',
+            'category' => (object)['name' => 'Catégorie 4']
+        ],
+        (object)[
+            'image' => 'images/post1.jpg',
+            'title' => 'Post 5',
+            'content' => 'Contenu du post 5',
+            'category' => (object)['name' => 'Catégorie 5']
+        ],
+        // Ajoutez plus de posts si nécessaire
+    ];
+    @endphp
     <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
         <div class="lg:w-6/12">
             <img class="w-full mb-6" src="{{ url($posts[0]->image) }}">
