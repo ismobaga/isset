@@ -14,8 +14,7 @@
 
         <!-- Scripts -->
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <!-- AOS init -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>  
+  
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Styles -->
@@ -57,5 +56,10 @@
         </div>
 
         @livewireScriptConfig
+    <!-- AOS init -->
+    <script  src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	 <script>
+    	AOS.init();
+    </script>
     </body>
 </html>
