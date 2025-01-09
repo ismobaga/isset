@@ -26,16 +26,14 @@
                                     fill="#2F327D" />
                             </svg>
                         </button>
-                        <x-filament::modal width="screen" id="view-video">
-                            <x-slot name="trigger">
+                        <x-modal width="screen" id="view-video">
+                        </x-modal>
                                 {{-- <x-filament::button> --}}
                                 <span class="cursor-pointer">Regarder video</span>
                                 {{-- Open modal --}}
                                 {{-- </x-filament::button> --}}
-                            </x-slot>
 
                             {{-- Modal content --}}
-                        </x-filament::modal>
                     </div>
                 </div>
             </div>

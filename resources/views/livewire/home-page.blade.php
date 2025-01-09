@@ -31,16 +31,13 @@
                                     fill="#2F327D" />
                             </svg>
                         </button>
-                        <x-filament::modal width="screen" id="view-video">
-                            <x-slot name="trigger">
-                                {{-- <x-filament::button> --}}
-                                <span class="cursor-pointer">Regarder video</span>
-                                {{-- Open modal --}}
-                                {{-- </x-filament::button> --}}
-                            </x-slot>
-
-                            {{-- Modal content --}}
-                        </x-filament::modal>
+                        
+                                <span class="cursor-pointer" wire:click="$toggle('showVideoModal')">Regarder video</span>
+                           
+                        <x-modal id="view-video">
+                            
+                            {{-- Contenu du modal --}}
+                        </x-modal>
                     </div>
                 </div>
             </div>
