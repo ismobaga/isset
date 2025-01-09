@@ -1,4 +1,4 @@
-    <!-- navbar -->
+<!-- navbar -->
     <div x-data="{ open: false }" class="w-full text-gray-700 bg-cream">
         <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
             <div class="flex flex-row items-center justify-between py-6">
@@ -24,15 +24,16 @@
                     </svg>
                 </button>
             </div>
+            @php
+                $menuItems = [
+                    ['label' => 'Accueil', 'url' => '/'],
+                    ['label' => 'Formations', 'url' => '/formations'],
+                    ['label' => 'A propos', 'url' => '/about'],
+                    ['label' => 'Contact', 'url' => '/contact'],
+                ];
+            @endphp
             <nav :class="{ 'transform md:transform-none scale-y-0': !open, 'h-full': open }"
                 class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 ">
-                @php
-                    $menuItems = [
-                        ['label' => 'Accueil', 'url' => '/'],
-                        ['label' => 'Formations', 'url' => '/formations'],
-                        ['label' => 'A propos', 'url' => '/about'],
-                        ['label' => 'Contact', 'url' => '/contact'],
-                    ];
                 @foreach ($menuItems as $item)
                     <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
                         href="{{ $item['url']}}">{{ $item['label'] }}</a>
