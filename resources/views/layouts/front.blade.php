@@ -48,7 +48,7 @@
             <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden @if($attributes['background']){{ $attributes['background'] }}@endif" x-ref="contentarea">
             {{ $header ?? null}}
                 <!-- <x-front.header :variant="$attributes['headerVariant']" /> -->
-                <x-front.header :variant="$attributes['headerVariant']" />
+                <!-- <x-front.header :variant="$attributes['headerVariant']" /> -->
 
                 <main class="grow">
                     {{ $slot }}
