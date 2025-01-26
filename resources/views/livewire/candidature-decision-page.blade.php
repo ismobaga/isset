@@ -26,6 +26,13 @@
                         <span class="text-red-500 text-xs">{{ $message }}</span>
                     @enderror
                 </div>
+                <div>
+                    <label for="programInfo" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Program Information</label>
+                    <input type="file" id="programInfo" wire:model="programInfo" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-700 rounded-md">
+                    @error('programInfo')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
+                </div>
             </div>
             <div class="mt-6">
                 <button type="submit" class="btn bg-gray-900 text-gray-100 hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-800 dark:hover:bg-white">Save</button>

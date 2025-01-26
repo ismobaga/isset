@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('duration')->nullable();
             $table->text('conditions')->nullable();
+            $table->string('program_info_pdf')->nullable(); // Add this line
             $table->foreignIdFor(App\Models\Program::class,'parent_id')->nullable();
             $table->timestamps();
         });

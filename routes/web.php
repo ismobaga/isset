@@ -24,6 +24,7 @@ use App\Livewire\ProgramListPage;
 use App\Livewire\AboutPage;
 use App\Livewire\ContactPage;
 use App\Livewire\ContactMessagesPage;
+use App\Livewire\ProgramViewPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,7 @@ Route::redirect('/', 'login');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard/analytics', [DashboardController::class, 'analytics'])->name('analytics');
     Route::get('/dashboard/fintech', [DashboardController::class, 'fintech'])->name('fintech');
+    Route::get('/dashboard/enrolled-courses', [DashboardController::class, 'enrolledCourses'])->name('dashboard.enrolled-courses');
     Route::get('/ecommerce/customers', [CustomerController::class, 'index'])->name('customers');
     Route::get('/ecommerce/orders', [OrderController::class, 'index'])->name('orders');
 
@@ -65,6 +67,7 @@ Route::redirect('/', 'login');
     Route::get('/programs', ProgramIndexPage::class)->name('programs.index');
     Route::get('/programs/create', ProgramCreatePage::class)->name('programs.create');
     Route::get('/programs/{program}/edit', ProgramEditPage::class)->name('programs.edit');
+    Route::get('/programs/{id}', ProgramViewPage::class)->name('programs.show');
 
     // Academic Year routes using Livewire
     Route::get('/academic-years', AcademicYearIndexPage::class)->name('academic-years.index');

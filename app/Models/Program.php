@@ -17,5 +17,11 @@ class Program extends Model
         'duration',
         'conditions',
         'parent_id',
+        'program_info_pdf', // Add this line
     ];
+
+    public function parent()
+    {
+        return $this->belongsTo(Program::class, 'parent_id');
+    }
 }

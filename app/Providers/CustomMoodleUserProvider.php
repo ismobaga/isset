@@ -105,5 +105,44 @@ class CustomMoodleUserProvider implements UserProvider
         }
 
         $user->save();
+
+        // TODO: Add cohort to user on creation in Moodle
+        // TODO: Auto-enroll user in cohort courses
+    }
+
+    public function getEnrolledCourses(string $token): array
+    {
+        $response = $this->http
+            ->asForm()
+            ->post(
+                "/webservice/rest/server.php?wstoken={$token}&wsfunction=core_enrol_get_users_courses&moodlewsrestformat=json",
+                [
+                    'userid' => auth()->user()->moodle_id,
+                ]
+            )
+            ->json();
+
+        // Add course image to each course
+        // foreach ($response as &$course) {
+        //     $course['courseimage'] = $this->getCourseImage($course['id'], $token);
+        // }
+
+        return $response;
+    }
+
+    private function getCourseImage(int $courseId, string $token): string
+    {
+        $response = $this->http
+            ->asForm()
+            ->post(
+                "/webservice/rest/server.php?wstoken={$token}&wsfunction=core_course_get_courses_by_field&moodlewsrestformat=json",
+                [
+                    'field' => 'id',
+                    'value' => $courseId,
+                ]
+            )
+            ->json();
+
+        return $response['courses'][0]['overviewfiles'][0]['fileurl'] ?? 'default-image-url';
     }
 }

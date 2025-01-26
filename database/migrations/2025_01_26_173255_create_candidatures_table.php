@@ -33,7 +33,7 @@ return new class extends Migration
             $table->string('state')->nullable();
             $table->foreignIdFor(\App\Models\Program::class);
             $table->foreignIdFor(\App\Models\AcademicYear::class);
-
+            $table->text('program_info')->nullable(); // New field for program information
             $table->timestamps();
         });
     }

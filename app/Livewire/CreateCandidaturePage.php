@@ -61,6 +61,12 @@ class CreateCandidaturePage extends Component
         ]);
 
         session()->flash('message', 'Candidature submitted successfully.');
+
+        // Clear form fields
+        $this->reset([
+            'firstname', 'lastname', 'email', 'phone', 'date_of_birth', 'place_of_birth', 'nationality',
+            'program_id', 'academic_year_id', 'photo', 'diplomas', 'transcripts', 'certificate', 'resume', 'identity_document'
+        ]);
     }
 
     public function render()

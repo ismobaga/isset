@@ -68,6 +68,13 @@
                         <span class="text-red-500 text-xs">{{ $message }}</span>
                     @enderror
                 </div>
+                <div>
+                    <label for="programInfoPdf" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Program Info PDF</label>
+                    <input type="file" id="programInfoPdf" wire:model="programInfoPdf" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-700 rounded-md">
+                    @error('programInfoPdf')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
+                </div>
             </div>
             <div class="mt-6">
                 <button type="submit"

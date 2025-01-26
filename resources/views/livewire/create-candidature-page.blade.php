@@ -32,9 +32,14 @@
 
 <div class="container mx-auto px-4">
     @if (session()->has('message'))
-        <div class="bg-green-500 text-white p-4 rounded mb-4">
+        <div id="flash-message" class="bg-green-500 text-white p-4 rounded mb-4">
             {{ session('message') }}
         </div>
+        <script>
+            setTimeout(function() {
+                document.getElementById('flash-message').style.display = 'none';
+            }, 5000); // 5 seconds
+        </script>
     @endif
 
     <form wire:submit.prevent="submit" class="grid grid-cols-1 sm:grid-cols-2 gap-4">

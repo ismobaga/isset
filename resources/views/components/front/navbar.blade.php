@@ -3,7 +3,7 @@
     <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
         <div class="flex flex-row items-center justify-between py-6">
             <div class="relative md:mt-8">
-                <a href="#"
+                <a href="/"
                     class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">ISEST</a>
                 {{-- <img src="logo.png" alt="" class="h-11 z-40 absolute -top-2 -left-3 text-emerald-500" > --}}
                 <svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none"
@@ -28,6 +28,7 @@
             $menuItems = [
                 ['label' => 'Accueil', 'url' => '/'],
                 ['label' => 'Formations', 'url' => '/formations'],
+                ['label' => 'Admission', 'url' => '/candidature'],
                 ['label' => 'A propos', 'url' => '/about'],
                 ['label' => 'Contact', 'url' => '/contact'],
             ];

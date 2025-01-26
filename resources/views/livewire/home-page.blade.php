@@ -14,13 +14,14 @@
 
                 </h1>
                 <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300" class="leading-normal text-2xl mb-8">
-                    L'ISEST est une institution d'enseignement supérieur dédiée à former les futurs professionnels de la santé avec un engagement envers l'excellence académique et l'innovation dans le domaine médical.</p>
+                    L'ISEST est une institution d'enseignement supérieur dédiée à former les futurs professionnels de la
+                    santé avec un engagement envers l'excellence académique et l'innovation dans le domaine médical.</p>
                 <div data-aos="fade-up" data-aos-once="true" data-aos-delay="700"
                     class="w-full md:flex items-center justify-center lg:justify-start md:space-x-5">
-                    <button
+                    <a href="/candidature"
                         class="lg:mx-0 bg-emerald-500 text-white text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
                         Admission gratuite
-                    </button>
+                    </a>
                     <div
                         class="flex items-center justify-center space-x-3 mt-5 md:mt-0 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
                         <button class="bg-white w-14 h-14 rounded-full flex items-center justify-center">
@@ -31,11 +32,11 @@
                                     fill="#2F327D" />
                             </svg>
                         </button>
-                        
-                                <span class="cursor-pointer" wire:click="$toggle('showVideoModal')">Regarder video</span>
-                           
+
+                        <span class="cursor-pointer" wire:click="$toggle('showVideoModal')">Regarder video</span>
+
                         <x-modal id="view-video">
-                            
+
                             {{-- Contenu du modal --}}
                         </x-modal>
                     </div>
@@ -115,7 +116,7 @@
     <div class="max-w-4xl mx-auto">
         <h1 class="text-center mb-3 text-gray-400 font-medium">Nos partenaires</h1>
         <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center">
-            
+
             {{-- <x-curator-curation :media="1" curation="thumbnail" /> --}}
             <img class="h-12" src="images/partners/10.png">
 
@@ -131,7 +132,11 @@
     <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24">
         <h1 class="font-bold text-darken my-3 text-2xl">Installations
         </h1>
-        <p class="leading-relaxed text-gray-500">Nos installations modernes offrent un environnement propice à l'apprentissage pratique et à la recherche dans le domaine de la santé. De laboratoires bien équipés à des salles de classe interactives, nous sommes déterminés à offrir la meilleure expérience d'apprentissage possible à nos étudiants. De plus, notre bibliothèque offre un large éventail de ressources académiques et professionnelles pour soutenir l'apprentissage et la recherche.</p>
+        <p class="leading-relaxed text-gray-500">Nos installations modernes offrent un environnement propice à
+            l'apprentissage pratique et à la recherche dans le domaine de la santé. De laboratoires bien équipés à des
+            salles de classe interactives, nous sommes déterminés à offrir la meilleure expérience d'apprentissage
+            possible à nos étudiants. De plus, notre bibliothèque offre un large éventail de ressources académiques et
+            professionnelles pour soutenir l'apprentissage et la recherche.</p>
     </div>
     <!-- card -->
     <div class="grid md:grid-cols-3 gap-14 md:gap-5 mt-20">
@@ -166,8 +171,11 @@
     <!-- lorem -->
     <div class="mt-28">
         <div data-aos="flip-down" class="text-center max-w-screen-md mx-auto">
-            <h1 class="text-3xl font-bold mb-4">Découvrez l'Institut Supérieur d'Excellence en Santé de Touba <span class="text-emerald-500">(ISEST)</span></h1>
-            <p class="text-gray-500">Au cœur de la ville sainte de Touba, l'Institut Supérieur d'Excellence en Santé de Touba (ISEST) s'impose comme un pilier de la formation et de la recherche dans le domaine de la santé. Voici ce qui fait de l'ISEST un choix incontournable.</p>
+            <h1 class="text-3xl font-bold mb-4">Découvrez l'Institut Supérieur d'Excellence en Santé de Touba <span
+                    class="text-emerald-500">(ISEST)</span></h1>
+            <p class="text-gray-500">Au cœur de la ville sainte de Touba, l'Institut Supérieur d'Excellence en Santé de
+                Touba (ISEST) s'impose comme un pilier de la formation et de la recherche dans le domaine de la santé.
+                Voici ce qui fait de l'ISEST un choix incontournable.</p>
         </div>
         <div data-aos="fade-up"
             class="flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-7">
@@ -205,7 +213,10 @@
         <div data-aos="fade-right" class="sm:w-1/2 relative">
             <div class="bg-emerald-500 rounded-full absolute w-12 h-12 z-0 -left-4 -top-3 animate-pulse"></div>
             <h1 class="font-semibold text-2xl relative z-50 text-darken lg:pr-10">Formation d'excellence </h1>
-            <p class="py-5 lg:pr-32">Profitez d'une formation d'excellence dispensée par une équipe pédagogique hautement qualifiée, composée de professeurs et de chercheurs reconnus dans leur domaine. À l'ISEST, nous nous engageons à fournir un enseignement de qualité, en phase avec les dernières avancées scientifiques et technologiques.</p>
+            <p class="py-5 lg:pr-32">Profitez d'une formation d'excellence dispensée par une équipe pédagogique
+                hautement qualifiée, composée de professeurs et de chercheurs reconnus dans leur domaine. À l'ISEST,
+                nous nous engageons à fournir un enseignement de qualité, en phase avec les dernières avancées
+                scientifiques et technologiques.</p>
             <a href="" class="underline">En savoir plus</a>
         </div>
         <div data-aos="fade-left" class="sm:w-1/2 relative mt-10 sm:mt-0">
@@ -279,7 +290,11 @@
         <div data-aos="fade-right" class="md:w-1/2 lg:pl-14">
             <h1 class="text-darken font-semibold text-3xl lg:pr-20">Approche pratique et immersive
             </h1>
-            <p class="text-gray-500 my-4 lg:pr-32">Expérimentez une approche pédagogique pratique et immersive, conçue pour développer vos compétences professionnelles et vous préparer efficacement à votre future carrière. Grâce à des stages en milieu hospitalier et des projets de recherche, vous aurez l'occasion de mettre en pratique les connaissances acquises en classe et d'acquérir une expérience concrète du travail dans le domaine de la santé.</p>
+            <p class="text-gray-500 my-4 lg:pr-32">Expérimentez une approche pédagogique pratique et immersive, conçue
+                pour développer vos compétences professionnelles et vous préparer efficacement à votre future carrière.
+                Grâce à des stages en milieu hospitalier et des projets de recherche, vous aurez l'occasion de mettre en
+                pratique les connaissances acquises en classe et d'acquérir une expérience concrète du travail dans le
+                domaine de la santé.</p>
         </div>
         <img data-aos="fade-left" class="md:w-1/2" src="images/pharm-z.png">
     </div>
@@ -404,39 +419,39 @@
         <p class="text-gray-500 my-5">Voir les développements survenus à l'ISEST dans le monde</p>
     </div>
     @php
-    $posts = [
-        (object)[
-            'image' => 'images/post1.jpg',
-            'title' => 'Post 1',
-            'content' => 'Contenu du post 1',
-            'category' => (object)['name' => 'Catégorie 1']
-        ],
-        (object)[
-            'image' => 'images/post1.jpg',
-            'title' => 'Post 2',
-            'content' => 'Contenu du post 2',
-            'category' => (object)['name' => 'Catégorie 2']
-        ],
-        (object)[
-            'image' => 'images/post1.jpg',
-            'title' => 'Post 3',
-            'content' => 'Contenu du post 3',
-            'category' => (object)['name' => 'Catégorie 3']
-        ],
-        (object)[
-            'image' => 'images/post1.jpg',
-            'title' => 'Post 4',
-            'content' => 'Contenu du post 4',
-            'category' => (object)['name' => 'Catégorie 4']
-        ],
-        (object)[
-            'image' => 'images/post1.jpg',
-            'title' => 'Post 5',
-            'content' => 'Contenu du post 5',
-            'category' => (object)['name' => 'Catégorie 5']
-        ],
-        // Ajoutez plus de posts si nécessaire
-    ];
+        $posts = [
+            (object) [
+                'image' => 'images/post1.jpg',
+                'title' => 'Post 1',
+                'content' => 'Contenu du post 1',
+                'category' => (object) ['name' => 'Catégorie 1'],
+            ],
+            (object) [
+                'image' => 'images/post1.jpg',
+                'title' => 'Post 2',
+                'content' => 'Contenu du post 2',
+                'category' => (object) ['name' => 'Catégorie 2'],
+            ],
+            (object) [
+                'image' => 'images/post1.jpg',
+                'title' => 'Post 3',
+                'content' => 'Contenu du post 3',
+                'category' => (object) ['name' => 'Catégorie 3'],
+            ],
+            (object) [
+                'image' => 'images/post1.jpg',
+                'title' => 'Post 4',
+                'content' => 'Contenu du post 4',
+                'category' => (object) ['name' => 'Catégorie 4'],
+            ],
+            (object) [
+                'image' => 'images/post1.jpg',
+                'title' => 'Post 5',
+                'content' => 'Contenu du post 5',
+                'category' => (object) ['name' => 'Catégorie 5'],
+            ],
+            // Ajoutez plus de posts si nécessaire
+        ];
     @endphp
     <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
         <div class="lg:w-6/12">
@@ -452,8 +467,7 @@
                 <div class="flex space-x-5">
                     <div class="w-4/12">
                         <div class="relative">
-                            <img class="rounded-xl w-full max-h-40"
-                                src="{{ url($posts[$i]->image) }}">
+                            <img class="rounded-xl w-full max-h-40" src="{{ url($posts[$i]->image) }}">
                             <span
                                 class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">{{ $posts[$i]->category?->name }}</span>
                         </div>

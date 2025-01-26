@@ -26,6 +26,8 @@ class ContactPage extends Component
         ]);
 
         session()->flash('message', 'Votre message a été envoyé avec succès.');
+        $this->reset([
+            'message', 'name', 'email']);
     }
 
     public function render()
