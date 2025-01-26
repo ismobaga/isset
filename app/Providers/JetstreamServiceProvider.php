@@ -9,7 +9,7 @@ use Laravel\Jetstream\Jetstream;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Actions\AttemptToAuthenticate;
 use Laravel\Fortify\Fortify;
-use NetworkRailBusinessSystems\LaravelMoodle\MoodleUserProvider;
+use App\Providers\CustomMoodleUserProvider;
 
 class JetstreamServiceProvider extends ServiceProvider
 {
@@ -31,38 +31,23 @@ class JetstreamServiceProvider extends ServiceProvider
         Jetstream::deleteUsersUsing(DeleteUser::class);
 
         Fortify::authenticateUsing(function (Request $request) {
-            $provider = new MoodleUserProvider();
-            // dd("test");
+            $provider = new CustomMoodleUserProvider();
 
             $creds = $request->only(config('laravel-moodle.login_attribute'), 'password');
-            $user = $provider->retrieveByCredentials( $creds);
-            // $user = User::where('username', $request->username)->firstOrNew();
-            
-            // AttemptToAuthenticate
-            // $user = new User();
-            // $user->username = $request->get(config('laravel-moodle.login_attribute'), '');
-            $rep = $provider->validateCredentials($user, $creds);
-            // dump($user, $creds);
-            // dump($request);
-            $userRet = $provider->retrieveByCredentials($creds);
-            // dump($rep);
-            // dump($userRet);
+            $user = $provider->retrieveByCredentials($creds);
 
-            $sess = session('moodle-token');
-            // dd($sess);
-            // $user = User::where('email', $request->email)->first();
+            if ($provider->validateCredentials($user, $creds)) {
+                // Limit user interaction based on role
+                if ($user->role === 'student') {
+                    // Restrict access or redirect to a specific page
+                    return null;
+                }
 
-            return $userRet;
+                return $user;
+            }
 
-            // dd($user);
-    
-            // if ($user &&
-            //     Hash::check($request->password, $user->password)) {
-            //     return $user;
-            // }
+            return null;
         });
-
-        
     }
 
     /**
