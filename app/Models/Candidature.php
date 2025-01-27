@@ -11,7 +11,24 @@ class Candidature extends Model
     use HasFactory;
 
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'phone', 'date_of_birth', 'place_of_birth', 'nationality', 'program_id', 'academic_year_id', 'photo', 'diplomas', 'transcripts', 'certificate', 'resume', 'identity_document', 'state'
+        'firstname',
+        'lastname',
+        'email',
+        'phone',
+        'date_of_birth',
+        'place_of_birth',
+        'nationality',
+        'program_id',
+        'academic_year_id',
+        'photo',
+        'diplomas',
+        'transcripts',
+        'certificate',
+        'resume',
+        'identity_document',
+        'state',
+        'program_info',
+        'decision_letter',
     ];
 
     // Add the relationship to the Program model

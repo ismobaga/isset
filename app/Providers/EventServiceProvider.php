@@ -10,6 +10,7 @@ use App\Events\CandidatureDecisionUpdated;
 use App\Events\UserCreatedOnMoodle;
 use App\Listeners\CreateUserOnCandidatureAccepted;
 use App\Listeners\SendLoginInfoToEmail;
+use App\Listeners\SendCandidatureDecisionEmail;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         CandidatureDecisionUpdated::class => [
             CreateUserOnCandidatureAccepted::class,
+            SendCandidatureDecisionEmail::class,
         ],
         UserCreatedOnMoodle::class => [
             SendLoginInfoToEmail::class,

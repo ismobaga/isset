@@ -46,37 +46,52 @@
         <div class="mb-4">
             <label for="firstname" class="block text-gray-700">First Name</label>
             <input type="text" id="firstname" wire:model="firstname" class="w-full px-3 py-2 border rounded">
-            @error('firstname') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('firstname')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="lastname" class="block text-gray-700">Last Name</label>
             <input type="text" id="lastname" wire:model="lastname" class="w-full px-3 py-2 border rounded">
-            @error('lastname') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('lastname')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="email" class="block text-gray-700">Email</label>
             <input type="email" id="email" wire:model="email" class="w-full px-3 py-2 border rounded">
-            @error('email') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('email')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="phone" class="block text-gray-700">Phone</label>
             <input type="text" id="phone" wire:model="phone" class="w-full px-3 py-2 border rounded">
-            @error('phone') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('phone')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="date_of_birth" class="block text-gray-700">Date of Birth</label>
             <input type="date" id="date_of_birth" wire:model="date_of_birth" class="w-full px-3 py-2 border rounded">
-            @error('date_of_birth') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('date_of_birth')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="place_of_birth" class="block text-gray-700">Place of Birth</label>
-            <input type="text" id="place_of_birth" wire:model="place_of_birth" class="w-full px-3 py-2 border rounded">
-            @error('place_of_birth') <span class="text-red-500">{{ $message }}</span> @enderror
+            <input type="text" id="place_of_birth" wire:model="place_of_birth"
+                class="w-full px-3 py-2 border rounded">
+            @error('place_of_birth')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="nationality" class="block text-gray-700">Nationality</label>
             <input type="text" id="nationality" wire:model="nationality" class="w-full px-3 py-2 border rounded">
-            @error('nationality') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('nationality')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="program_id" class="block text-gray-700">Program</label>
@@ -86,47 +101,64 @@
                     <option value="{{ $program->id }}">{{ $program->name }}</option>
                 @endforeach
             </select>
-            @error('program_id') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('program_id')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="academic_year_id" class="block text-gray-700">Academic Year</label>
             <select id="academic_year_id" wire:model="academic_year_id" class="w-full px-3 py-2 border rounded">
                 <option value="">Select Academic Year</option>
                 @foreach ($academicYears as $academicYear)
-                    <option value="{{ $academicYear->id }}">{{ $academicYear->year }}</option>
+                    <option value="{{ $academicYear->id }}">{{ $academicYear->name }}</option>
                 @endforeach
             </select>
-            @error('academic_year_id') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('academic_year_id')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="photo" class="block text-gray-700">Photo</label>
             <input type="file" id="photo" wire:model="photo" class="w-full px-3 py-2 border rounded">
-            @error('photo') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('photo')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="diplomas" class="block text-gray-700">Diplomas</label>
             <input type="file" id="diplomas" wire:model="diplomas" class="w-full px-3 py-2 border rounded">
-            @error('diplomas') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('diplomas')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="transcripts" class="block text-gray-700">Transcripts</label>
             <input type="file" id="transcripts" wire:model="transcripts" class="w-full px-3 py-2 border rounded">
-            @error('transcripts') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('transcripts')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="certificate" class="block text-gray-700">Certificate</label>
             <input type="file" id="certificate" wire:model="certificate" class="w-full px-3 py-2 border rounded">
-            @error('certificate') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('certificate')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="resume" class="block text-gray-700">Resume</label>
             <input type="file" id="resume" wire:model="resume" class="w-full px-3 py-2 border rounded">
-            @error('resume') <span class="text-red-500">{{ $message }}</span> @enderror
+            @error('resume')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="mb-4">
             <label for="identity_document" class="block text-gray-700">Identity Document</label>
-            <input type="file" id="identity_document" wire:model="identity_document" class="w-full px-3 py-2 border rounded">
-            @error('identity_document') <span class="text-red-500">{{ $message }}</span> @enderror
+            <input type="file" id="identity_document" wire:model="identity_document"
+                class="w-full px-3 py-2 border rounded">
+            @error('identity_document')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
         </div>
         <div class="col-span-1 sm:col-span-2">
             <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Submit</button>

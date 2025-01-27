@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             DashboardTableSeeder::class,
+            AcademicYearSeeder::class,
+            ProgramSeeder::class, // Add this line to call the ProgramSeeder
         ]);
     }
 }

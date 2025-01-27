@@ -26,22 +26,17 @@ class CreateUserOnCandidatureAccepted
 
     public function handle(CandidatureDecisionUpdated $event)
     {
-        if ($event->candidature->state === 'Accepted') {
-            // Create user in local database
-            // $user = User::create([
-            //     'name' => $event->candidature->firstname . ' ' . $event->candidature->lastname,
-            //     'email' => $event->candidature->email,
-            //     'password' => Hash::make('defaultpassword'), // You may want to generate a random password or send an email to set the password
-            // ]);
+        if ($event->candidature->state === 'accepted') {
+            $username = $event->candidature->email;
+            $password = 'Isest1234@';
 
-            $username= $event->candidature->email;
-            $password= 'Isest1234@';
-
-            $user = User::where('email', $username)->firstOrNew([
+            $user = User::firstOrCreate(
+                ['email' => $username],
+                [
                     'name' => $event->candidature->firstname . ' ' . $event->candidature->lastname,
-                    'email' => $event->candidature->email,
-                    'password' => Hash::make($password), // You may want to generate a random password or send an email to set the password
-                ]);
+                    'password' => Hash::make($password),
+                ]
+            );
 
             // Create user on Moodle
             $response = $this->http->asForm()->post('/webservice/rest/server.php', [

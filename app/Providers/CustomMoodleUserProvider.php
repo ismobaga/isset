@@ -89,20 +89,20 @@ class CustomMoodleUserProvider implements UserProvider
                 $user->$key = $data[$item] ?? null;
             });
 
-        // Retrieve and set the user's role
-        $roles = $this->http
-            ->asForm()
-            ->post(
-                "/webservice/rest/server.php?wstoken={$this->adminToken}&wsfunction=core_role_get_user_roles&moodlewsrestformat=json",
-                [
-                    'userid' => $data['id'],
-                ]
-            )
-            ->json();
+        // // Retrieve and set the user's role
+        // $roles = $this->http
+        //     ->asForm()
+        //     ->post(
+        //         "/webservice/rest/server.php?wstoken={$this->adminToken}&wsfunction=core_role_get_user_roles&moodlewsrestformat=json",
+        //         [
+        //             'userid' => $data['id'],
+        //         ]
+        //     )
+        //     ->json();
 
-        if (!empty($roles)) {
-            $user->role = $roles[0]['shortname'] ?? null;
-        }
+        // if (!empty($roles)) {
+        //     $user->role = $roles[0]['shortname'] ?? null;
+        // }
 
         $user->save();
 
