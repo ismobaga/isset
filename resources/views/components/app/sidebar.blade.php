@@ -265,6 +265,23 @@
                             </ul>
                         </div>
                     </li>
+                    <!-- Enroll Users -->
+                    <li class="pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] @if (in_array(Request::segment(1), ['enroll-users'])) {{ 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]' }} @endif">
+                        <a class="block text-gray-800 dark:text-gray-100 truncate transition @if (!in_array(Request::segment(1), ['enroll-users'])) {{ 'hover:text-gray-900 dark:hover:text-white' }} @endif"
+                            href="{{ route('enrolled-courses.index') }}">
+                            <div class="flex items-center">
+                                <svg class="shrink-0 fill-current @if (in_array(Request::segment(1), ['enroll-users'])) {{ 'text-violet-500' }}@else{{ 'text-gray-400 dark:text-gray-500' }} @endif"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM4 6a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Zm1 3h6a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2Z" />
+                                </svg>
+                                <span
+                                    class="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Mes
+                                    Cours</span>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

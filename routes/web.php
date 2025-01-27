@@ -47,9 +47,9 @@ Route::get('/contact', ContactPage::class);
 
 
 Route::prefix('edu')->middleware(['laravel-moodle'])->group(function () {
-// Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    // Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
-Route::redirect('/', 'login');
+    Route::redirect('/', 'login');
 
 
     // Route for the getting the data feed
@@ -58,9 +58,7 @@ Route::redirect('/', 'login');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard/analytics', [DashboardController::class, 'analytics'])->name('analytics');
     Route::get('/dashboard/fintech', [DashboardController::class, 'fintech'])->name('fintech');
-    Route::get('/dashboard/enrolled-courses', [DashboardController::class, 'enrolledCourses'])->name('dashboard.enrolled-courses');
-    Route::get('/ecommerce/customers', [CustomerController::class, 'index'])->name('customers');
-    Route::get('/ecommerce/orders', [OrderController::class, 'index'])->name('orders');
+    Route::get('/enrolled-courses', [DashboardController::class, 'enrolledCourses'])->name('enrolled-courses.index');
 
     // Program routes using Livewire
 
@@ -80,7 +78,7 @@ Route::redirect('/', 'login');
 
     Route::get('/contact-messages', ContactMessagesPage::class)->name('contact-messages.index');
 
-    Route::fallback(function() {
+    Route::fallback(function () {
         return view('pages/utility/404');
     });
 });
