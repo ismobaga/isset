@@ -1,16 +1,18 @@
 <x-authentication-layout>
     <h1 class="text-3xl text-gray-800 dark:text-gray-100 font-bold mb-6">{{ __('Bon retour !') }}</h1>
     @if (session('status'))
-    <div class="mb-4 font-medium text-sm text-green-600">
-        {{ session('status') }}
-    </div>
+        <div class="mb-4 font-medium text-sm text-green-600">
+            {{ session('status') }}
+        </div>
     @endif
     <!-- Form -->
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <div class="space-y-4">
             <div>
-                <x-label for="username" value="{{ __('Nom d\'utilisateur') }}" />
+                <x-label for="username">
+                    {{ __("Nom d'utilisateur") }}
+                </x-label>
                 <x-input id="username" type="text" name="username" :value="old('usernmae')" required autofocus />
             </div>
             <div>
@@ -20,11 +22,11 @@
         </div>
         <div class="flex items-center justify-between mt-6">
             @if (Route::has('password.request'))
-            <div class="mr-1">
-                <a class="text-sm underline hover:no-underline" href="{{ route('password.request') }}">
-                    {{ __('Mot de passe oublié?') }}
-                </a>
-            </div>
+                <div class="mr-1">
+                    <a class="text-sm underline hover:no-underline" href="{{ route('password.request') }}">
+                        {{ __('Mot de passe oublié?') }}
+                    </a>
+                </div>
             @endif
             <x-button class="ml-3">
                 {{ __('Se connecter') }}
