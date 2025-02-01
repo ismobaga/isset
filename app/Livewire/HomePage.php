@@ -4,17 +4,20 @@ namespace App\Livewire;
 
 use Livewire\Attributes\Layout;
 use Livewire\Component;
-
+use App\Models\Partner;
+use App\Models\Post;
 
 class HomePage extends Component
 {
-
     public bool $showVideoModal = false;
 
-    #[Layout('layouts.front')] 
+    #[Layout('layouts.front')]
     public function render()
     {
-        return view('livewire.home-page')
-                ->layout('layouts.front'); 
+        $partners = Partner::where('display', true)->get();
+        $posts = Post::with('category')->take(5)->get();
+
+        return view('livewire.home-page', compact('partners', 'posts'))
+            ->layout('layouts.front');
     }
 }
