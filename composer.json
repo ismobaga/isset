@@ -9,6 +9,7 @@
         "blade-ui-kit/blade-heroicons": "^2.5",
         "blade-ui-kit/blade-icons": "^1.7",
         "guzzlehttp/guzzle": "^7.2",
+        "joelwmale/livewire-quill": "^4.0",
         "laravel/framework": "^10.10",
         "laravel/jetstream": "^4.2",
         "laravel/sanctum": "^3.3",

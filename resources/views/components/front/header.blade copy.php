@@ -1,5 +1,5 @@
 <header class="sticky top-0 before:absolute before:inset-0 before:backdrop-blur-md max-lg:before:bg-white/90 dark:max-lg:before:bg-gray-800/90 before:-z-10 z-30 {{ $variant === 'v2' || $variant === 'v3' ? 'before:bg-white after:absolute after:h-px after:inset-x-0 after:top-full after:bg-gray-200 dark:after:bg-gray-700/60 after:-z-10' : 'max-lg:shadow-sm lg:before:bg-gray-100/90 dark:lg:before:bg-gray-900/90' }} {{ $variant === 'v2' ? 'dark:before:bg-gray-800' : '' }} {{ $variant === 'v3' ? 'dark:before:bg-gray-900' : '' }}">
-<div class="bg-cream">
+    <div class="bg-cream">
         <div class="max-w-screen-xl min-h-screen px-8 mx-auto flex flex-col lg:flex-row items-start">
             <!--Left Col-->
             <div
@@ -26,14 +26,8 @@
                                     fill="#2F327D" />
                             </svg>
                         </button>
-                        <x-modal width="screen" id="view-video">
+                        <x-modal width="screen" id="view-video" wire:model="showVideoModal">
                         </x-modal>
-                                {{-- <x-filament::button> --}}
-                                <span class="cursor-pointer">Regarder video</span>
-                                {{-- Open modal --}}
-                                {{-- </x-filament::button> --}}
-
-                            {{-- Modal content --}}
                     </div>
                 </div>
             </div>

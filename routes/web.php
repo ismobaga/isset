@@ -27,6 +27,7 @@ use App\Livewire\ContactMessagesPage;
 use App\Livewire\ProgramViewPage;
 use App\Livewire\PostIndexPage; // Add this line
 use App\Livewire\PostShowPage; // Add this line
+use App\Livewire\ProgramShowPage; // Add this line
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +47,7 @@ Route::get('/candidature', CreateCandidaturePage::class);
 Route::get('/formations', ProgramListPage::class);
 Route::get('about', AboutPage::class);
 Route::get('/contact', ContactPage::class);
-
+Route::get('/programs/{id}', ProgramShowPage::class)->name('programs.show'); // Move this line
 
 Route::prefix('edu')->middleware(['laravel-moodle'])->group(function () {
     // Route::middleware(['auth:sanctum', 'verified'])->group(function () {
@@ -67,7 +68,7 @@ Route::prefix('edu')->middleware(['laravel-moodle'])->group(function () {
     Route::get('/programs', ProgramIndexPage::class)->name('programs.index');
     Route::get('/programs/create', ProgramCreatePage::class)->name('programs.create');
     Route::get('/programs/{program}/edit', ProgramEditPage::class)->name('programs.edit');
-    Route::get('/programs/{id}', ProgramViewPage::class)->name('programs.show');
+    // Route::get('/programs/{id}', ProgramViewPage::class)->name('programs.show');
 
     // Academic Year routes using Livewire
     Route::get('/academic-years', AcademicYearIndexPage::class)->name('academic-years.index');

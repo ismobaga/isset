@@ -124,16 +124,33 @@
         <!-- trusted by -->
         <div class="max-w-4xl mx-auto">
             <h1 class="text-center mb-3 text-gray-400 font-medium">Nos partenaires</h1>
-            <div class="overflow-hidden partners w-full">
-                <div class="animate-scroll">
+            <div class="overflow-hidden patners  w-full">
+                <div class=" animate-scroll ">
                     @foreach ($partners as $partner)
-                        <img class="h-12 mx-4" src="{{ asset($partner->logo) }}" alt="{{ $partner->name }}">
+                        {{-- <a href="{{ $partner->website }}" target="_blank"> --}}
+                        <img class="h-12" src="{{ asset($partner->logo) }}" alt="{{ $partner->name }}">
+                        {{-- </a> --}}
                     @endforeach
                     @foreach ($partners as $partner)
-                        <img class="h-12 mx-4" src="{{ asset($partner->logo) }}" alt="{{ $partner->name }}">
+                        {{-- <a href="{{ $partner->website }}" target="_blank"> --}}
+                        <img class="h-12" src="{{ asset($partner->logo) }}" alt="{{ $partner->name }}">
+                        {{-- </a> --}}
+                    @endforeach
+                </div>
+                <div class=" animate-scroll">
+                    @foreach ($partners as $partner)
+                        {{-- <a href="{{ $partner->website }}" target="_blank"> --}}
+                        <img class="h-12" src="{{ asset($partner->logo) }}" alt="{{ $partner->name }}">
+                        {{-- </a> --}}
+                    @endforeach
+                    @foreach ($partners as $partner)
+                        {{-- <a href="{{ $partner->website }}" target="_blank"> --}}
+                        <img class="h-12" src="{{ asset($partner->logo) }}" alt="{{ $partner->name }}">
+                        {{-- </a> --}}
                     @endforeach
                 </div>
             </div>
+
         </div>
 
         <!-- All-In-One Cloud Software. -->
@@ -471,56 +488,7 @@
     </div>
     <!-- .container -->
 
-    <x-front.footer /> <!-- Add this line -->
 
-    @script
-        <style>
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
 
-                100% {
-                    transform: translateX(-50%);
-                }
-            }
 
-            .animate-scroll {
-                display: flex;
-                animation: scroll 20s linear infinite;
-            }
-
-            .partners {
-                overflow: hidden;
-                position: relative;
-                padding: 16px 0;
-                white-space: nowrap;
-            }
-
-            .partners:before,
-            .partners:after {
-                position: absolute;
-                top: 0;
-                width: 250px;
-                height: 100%;
-                content: "";
-                z-index: 2;
-            }
-
-            .partners:before {
-                left: 0;
-                background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-            }
-
-            .partners:after {
-                right: 0;
-                background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
-            }
-
-            .partners:hover .animate-scroll {
-                animation-play-state: paused;
-            }
-        </style>
-    @endscript
-
-</div> <!-- Add this line to wrap the content -->
+</div>
