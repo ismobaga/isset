@@ -25,6 +25,8 @@ use App\Livewire\AboutPage;
 use App\Livewire\ContactPage;
 use App\Livewire\ContactMessagesPage;
 use App\Livewire\ProgramViewPage;
+use App\Livewire\PostIndexPage; // Add this line
+use App\Livewire\PostShowPage; // Add this line
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +79,9 @@ Route::prefix('edu')->middleware(['laravel-moodle'])->group(function () {
     Route::get('/candidatures/{candidature}/decision', CandidatureDecisionPage::class)->name('candidatures.decision');
 
     Route::get('/contact-messages', ContactMessagesPage::class)->name('contact-messages.index');
+
+    Route::get('/posts', PostIndexPage::class)->name('posts.index'); // Add this line
+    Route::get('/posts/{post}', PostShowPage::class)->name('posts.show'); // Add this line
 
     Route::fallback(function () {
         return view('pages/utility/404');

@@ -15,6 +15,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+
 /*primary color*/
 .bg-cream {
     /* background-color: #FFF2E1; */
@@ -32,27 +36,27 @@ body {
 .text-yellow-500 {
     color: #F48C06;
 }
-.floating { 
-    animation-name: floating; 
-    animation-duration: 3s; 
-    animation-iteration-count: infinite; 
+.floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-} 
-@keyframes floating { 
-    0% { transform: translate(0, 0px); } 
-    50% { transform: translate(0, 8px); } 
-    100% { transform: translate(0, -0px); }  
-} 
-.floating-4 { 
-    animation-name: floating; 
-    animation-duration: 4s; 
-    animation-iteration-count: infinite; 
+}
+@keyframes floating {
+    0% { transform: translate(0, 0px); }
+    50% { transform: translate(0, 8px); }
+    100% { transform: translate(0, -0px); }
+}
+.floating-4 {
+    animation-name: floating;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-} 
-@keyframes floating-4 { 
-    0% { transform: translate(0, 0px); } 
-    50% { transform: translate(0, 8px); } 
-    100% { transform: translate(0, -0px); }  
+}
+@keyframes floating-4 {
+    0% { transform: translate(0, 0px); }
+    50% { transform: translate(0, 8px); }
+    100% { transform: translate(0, -0px); }
 }
 .text-darken {
     color: #2F327D;
@@ -145,6 +149,50 @@ body {
 .header-links a:focus {
   @apply text-inherit opacity-90;
 }
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.patners{
+    @apply overflow-hidden relative py-16 whitespace-nowrap px-0 block
+}
+
+.patners:before,
+.patners:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+.patners:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+
+  .patners:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+.patners:hover .animate-scroll {
+    animation-play-state: paused;
+}
+.animate-scroll {
+    /* position: absolute; */
+    display: inline-block;
+    animation: scroll 10s linear infinite;
+}
+
+
 .widgets-wrapper {
   @apply bg-[#0f6c6b] pt-12 pb-32 px-12;
 }
