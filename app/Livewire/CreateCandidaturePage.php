@@ -40,6 +40,22 @@ class CreateCandidaturePage extends Component
             'certificate' => 'nullable|file|max:2048',
             'resume' => 'nullable|file|max:2048',
             'identity_document' => 'required|file|max:2048',
+        ], attributes: [
+            'firstname' => 'Prénom',
+            'lastname' => 'Nom',
+            'email' => 'Adresse e-mail',
+            'phone' => 'Téléphone',
+            'date_of_birth' => 'Date de naissance',
+            'place_of_birth' => 'Lieu de naissance',
+            'nationality' => 'Nationalité',
+            'program_id' => 'Programme',
+            'academic_year_id' => 'Année académique',
+            'photo' => 'Photo',
+            'diplomas' => 'Diplômes',
+            'transcripts' => 'Relevés de notes',
+            'certificate' => 'Les certificats',
+            'resume' => 'Curriculum vitae',
+            'identity_document' => 'Document d\'identité',
         ]);
 
         $candidature = Candidature::create([
