@@ -38,7 +38,7 @@
                         'quillId' => 'description',
                         'data' => $description,
                         'placeholder' => 'Type something...',
-                        'classes' => 'bg-white text-primary',
+                        'classes' => 'bg-white text-primary w-full',
                         // optional classes that can be added to the editor, that are added for this instance only
                         // 'mergeToolbar' => true, // optional, if you want to merge the toolbar with the default toolbar configuration,
                     ])

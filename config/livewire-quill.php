@@ -20,7 +20,7 @@ return [
     /*
      * The base classes to use for all instances of the editor
      */
-    'editor_classes' => env('LIVEWIRE_QUILL_EDITOR_CLASSES', 'prose lg:prose-xl bg-white'),
+    'editor_classes' => env('LIVEWIRE_QUILL_EDITOR_CLASSES', 'prose-xl bg-white'),
 
     /**
      * The toolbar options to use for all instances of the editor
