@@ -34,12 +34,12 @@ class CreateCandidaturePage extends Component
             'nationality' => 'required|string|max:255',
             'program_id' => 'required|exists:programs,id',
             'academic_year_id' => 'required|exists:academic_years,id',
-            'photo' => 'nullable|image|max:1024',
-            'diplomas' => 'nullable|file|max:2048',
-            'transcripts' => 'nullable|file|max:2048',
+            'photo' => 'required|image|max:1024',
+            'diplomas' => 'required|file|max:2048',
+            'transcripts' => 'required|file|max:2048',
             'certificate' => 'nullable|file|max:2048',
             'resume' => 'nullable|file|max:2048',
-            'identity_document' => 'nullable|file|max:2048',
+            'identity_document' => 'required|file|max:2048',
         ]);
 
         $candidature = Candidature::create([
@@ -64,8 +64,21 @@ class CreateCandidaturePage extends Component
 
         // Clear form fields
         $this->reset([
-            'firstname', 'lastname', 'email', 'phone', 'date_of_birth', 'place_of_birth', 'nationality',
-            'program_id', 'academic_year_id', 'photo', 'diplomas', 'transcripts', 'certificate', 'resume', 'identity_document'
+            'firstname',
+            'lastname',
+            'email',
+            'phone',
+            'date_of_birth',
+            'place_of_birth',
+            'nationality',
+            'program_id',
+            'academic_year_id',
+            'photo',
+            'diplomas',
+            'transcripts',
+            'certificate',
+            'resume',
+            'identity_document'
         ]);
     }
 
