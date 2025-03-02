@@ -1,13 +1,13 @@
 <div class="container mx-auto px-4">
     <h1 class="text-3xl font-bold mb-8">{{ $program->name }}</h1>
-    <div class="bg-white shadow-md rounded-lg p-6 flex flex-col md:flex-row">
+    <div class="bg-white shadow-md rounded-lg p-6 grid grid-cols-12 gap-4">
         @if ($program->image)
-            <div class="mb-4 md:mb-0 md:mr-6 w-full h-auto">
+            <div class="mb-4 md:mb-0 md:mr-6 w-full h-auto col-span-5">
                 <img src="{{ asset('storage/' . $program->image) }}" alt="{{ $program->name }}"
                     class="w-full h-auto rounded-md">
             </div>
         @endif
-        <div class="prose lg:prose-xl">
+        <div class="prose lg:prose-xl col-span-7">
             {!! $program->description !!}
             @if ($program->program_info_pdf)
                 <a href="{{ asset('storage/' . $program->program_info_pdf) }}"

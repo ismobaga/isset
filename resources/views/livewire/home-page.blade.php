@@ -130,15 +130,17 @@
                 <div class="swiper multiple-slide-carousel swiper-container relative">
                     <div class="swiper-wrapper mb-16">
                         @foreach ($partners as $partner)
-                            <div class="swiper-slide">
-                                <a href="{{ $partner->website }}" target="_blank"
-                                    class="bg-indigo-50 rounded-2xl h-64 flex justify-center items-center">
-                                    {{-- <span class="text-2xl font-semibold text-indigo-600">Slide 1 </span> --}}
-                                    <img class="" src="{{ asset(path: $partner->logo) }}"
-                                        alt="{{ $partner->name }}">
+                            @if ($partner->display)
+                                <div class="swiper-slide">
+                                    <a href="{{ $partner->website }}" target="_blank"
+                                        class="bg-indigo-50 rounded-2xl h-64 flex justify-center items-center">
+                                        {{-- <span class="text-2xl font-semibold text-indigo-600">Slide 1 </span> --}}
+                                        <img class="" src="{{ asset('storage/' . $partner->logo) }}"
+                                            alt="{{ $partner->name }}">
 
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
+                            @endif
                         @endforeach
 
                     </div>
