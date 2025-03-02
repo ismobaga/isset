@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet" />
 
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
     <!-- Styles -->
     @livewireStyles
@@ -63,6 +66,34 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+
+    <!--JAVASCRIPT CODE-->
+    <script>
+        var swiper = new Swiper(".multiple-slide-carousel", {
+            loop: true,
+            autoplay: true,
+            slidesPerView: 3,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".multiple-slide-carousel .swiper-button-next",
+                prevEl: ".multiple-slide-carousel .swiper-button-prev",
+            },
+            breakpoints: {
+                1920: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1028: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                990: {
+                    slidesPerView: 1,
+                    spaceBetween: 0
+                }
+            }
+        });
     </script>
 </body>
 

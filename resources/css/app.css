@@ -22,12 +22,13 @@
 /*primary color*/
 .bg-cream {
     /* background-color: #FFF2E1; */
-    @apply bg-emerald-50;
+    @apply bg-emerald-100;
 }
 
 /*font*/
 body {
     font-family: 'Poppins', sans-serif;
+
 }
 
 .bg-yellow-500 {
@@ -161,8 +162,21 @@ body {
     }
 }
 
+/* CSS Code */
+.swiper-wrapper {
+    width: 100%;
+    height: max-content !important;
+    /* padding-bottom: 64px !important; */
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    position: relative;
+    }
+    .swiper-pagination-bullet {
+    background: #4f46e5;
+    }
+
 .patners{
-    @apply overflow-hidden relative py-16 whitespace-nowrap px-0 block
+    /* @apply overflow-hidden relative py-16 whitespace-nowrap px-0 block */
 }
 
 .patners:before,
