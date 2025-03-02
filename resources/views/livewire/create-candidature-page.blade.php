@@ -244,7 +244,8 @@
             @enderror
         </div>
         <div class="col-span-1 sm:col-span-2">
-            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Submit</button>
+            <button type="submit" class="px-4 py-2 bg-emerald-700 text-white rounded">Soumettre la
+                candidature</button>
         </div>
     </form>
 </div>
