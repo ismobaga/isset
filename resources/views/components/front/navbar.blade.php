@@ -1,5 +1,5 @@
 <!-- navbar -->
-<div x-data="{ open: false }" class="w-full text-gray-700 bg-cream">
+<div x-data="{ open: false, admissionOpen: false }" class="w-full text-gray-700 bg-cream">
     <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
         <div class="flex flex-row items-center justify-between py-6">
             <div class="relative md:mt-8">
@@ -28,7 +28,15 @@
             $menuItems = [
                 ['label' => 'Accueil', 'url' => '/'],
                 ['label' => 'Formations', 'url' => '/formations'],
-                ['label' => 'Admission', 'url' => '/candidature'],
+                [
+                    'label' => 'Admission',
+                    'hasSubmenu' => true,
+                    'submenu' => [
+                        ['label' => 'Candidature', 'url' => '/candidature'],
+                        ['label' => 'Procédure d\'inscription', 'url' => '/procedure-inscription'],
+                        ['label' => 'Frais de scolarité', 'url' => '/frais-scolarite'],
+                    ],
+                ],
                 ['label' => 'A propos', 'url' => '/about'],
                 ['label' => 'Contact', 'url' => '/contact'],
             ];
@@ -36,11 +44,39 @@
         <nav :class="{ 'transform md:transform-none scale-y-0': !open, 'h-full': open }"
             class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 ">
             @foreach ($menuItems as $item)
-                <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-4 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
-                    href="{{ $item['url'] }}">{{ $item['label'] }}</a>
+                @if (isset($item['hasSubmenu']) && $item['hasSubmenu'])
+                    <div class="relative group" x-data="{ open: false }" @mouseenter="open = !open"
+                        @mouseleave="open = false">
+                        <button
+                            class="flex items-center px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-4 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                            {{ $item['label'] }}
+                            <svg :class="open ? '' : '-rotate-90'" class="w-4 h-4 ml-1 "
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="absolute right-0 w-48 mt-2 origin-top-right bg-white rounded-md shadow-lg md:w-56">
+                            <div class="py-1 rounded-md bg-white shadow-xs">
+                                @foreach ($item['submenu'] as $subitem)
+                                    <a href="{{ $subitem['url'] }}"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{{ $subitem['label'] }}</a>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-4 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+                        href="{{ $item['url'] }}">{{ $item['label'] }}</a>
+                @endif
             @endforeach
-            {{-- <a class="px-10 py-3 mt-2 text-sm text-center bg-white text-gray-800 rounded-full md:mt-8 md:ml-4"
-                    href="#">Login</a> --}}
             <a class="px-10 py-3 mt-2 text-sm text-center bg-emerald-500 text-white rounded-full md:mt-4 md:ml-4"
                 href="/edu">EduConnect</a>
         </nav>
