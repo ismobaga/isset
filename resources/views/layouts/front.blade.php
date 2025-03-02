@@ -74,6 +74,11 @@
             loop: true,
             autoplay: true,
             slidesPerView: 3,
+            createElements: true,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
             spaceBetween: 20,
             navigation: {
                 nextEl: ".multiple-slide-carousel .swiper-button-next",

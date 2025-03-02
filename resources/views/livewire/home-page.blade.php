@@ -124,6 +124,12 @@
         <!-- trusted by -->
         <div class="max-w-4xl mx-auto">
             <h1 class="text-center mb-3 text-gray-400 font-bold text-darken my-3 text-2xl">Nos partenaires</h1>
+            <p class="leading-relaxed text-gray-500 py-5 lg:pr-32  text-justify">
+                L'ISEST s'enorgueillit de collaborer avec des institutions prestigieuses, des hôpitaux de référence et
+                des organisations de santé reconnues. Ces partenariats stratégiques enrichissent notre offre de
+                formation, offrent des opportunités de stage exclusives à nos étudiants et garantissent que nos
+                programmes répondent aux besoins réels du secteur de la santé.
+            </p>
 
             <!--HTML CODE-->
             <div class="w-full relative">
@@ -133,7 +139,7 @@
                             @if ($partner->display)
                                 <div class="swiper-slide">
                                     <a href="{{ $partner->website }}" target="_blank"
-                                        class="bg-indigo-50 rounded-2xl h-64 flex justify-center items-center">
+                                        class="bg-indigo-50 rounded-2xl h-48 flex justify-center items-center">
                                         {{-- <span class="text-2xl font-semibold text-indigo-600">Slide 1 </span> --}}
                                         <img class="" src="{{ asset('storage/' . $partner->logo) }}"
                                             alt="{{ $partner->name }}">
@@ -163,7 +169,8 @@
             <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-24">
                 <h1 class="font-bold text-darken my-3 text-2xl">Installations
                 </h1>
-                <p class="leading-relaxed text-gray-500">Nos installations modernes offrent un environnement propice à
+                <p class="leading-relaxed text-gray-500 text-justify">Nos installations modernes offrent un
+                    environnement propice à
                     l'apprentissage pratique et à la recherche dans le domaine de la santé. De laboratoires bien équipés
                     à
                     des
@@ -221,12 +228,12 @@
                 <div data-aos="fade-up"
                     class="flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-7">
                     <div class="relative md:w-5/12">
-                        <img class="rounded-2xl" src="images/consult.jpg" alt="">
+                        <img class="rounded-2xl" src="images/program.jpg" alt="">
                         <div class="absolute bg-black bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
                             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                <h1 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">Pour les
+                                <h3 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">Pour les
                                     etudiants
-                                </h1>
+                                </h3>
                                 <button
                                     class="rounded-full text-white text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out"
                                     style="background: rgba(47, 50, 125, 0.9)">Voir nos programmes</button>
@@ -234,14 +241,14 @@
                         </div>
                     </div>
                     <div class="relative md:w-5/12">
-                        <img class="rounded-2xl" src="images/pharm.jpg" alt="">
+                        <img class="rounded-2xl" src="images/staff.jpg" alt="">
                         <div class="absolute bg-black bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
                             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                <h1 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">POUR LES
+                                <h1 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">VOIR LES
                                     INSTRUCTEURS
                                 </h1>
                                 <button
-                                    class="rounded-full text-white border text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">Commencez
+                                    class="rounded-full text-white border text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
                                     à donner un cours aujourd'hui</button>
                             </div>
                         </div>

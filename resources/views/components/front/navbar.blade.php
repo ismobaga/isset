@@ -5,7 +5,7 @@
             <div class="relative md:mt-8">
                 <a href="/"
                     class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">ISEST</a>
-                {{-- <img src="logo.png" alt="" class="h-11 z-40 absolute -top-2 -left-3 text-emerald-500" > --}}
+                {{-- <img src="logo.png" alt="" class="h-14 z-40 absolute -top-2 -left-3 text-emerald-500"> --}}
                 <svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
