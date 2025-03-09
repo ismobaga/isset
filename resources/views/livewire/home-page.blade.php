@@ -481,42 +481,47 @@
             </div>
 
             <!-- Latest News and Resources -->
-            <div data-aos="zoom-in" class="mt-16 text-center">
-                <h1 class="text-darken text-2xl font-semibold">Dernières nouvelles et ressources</h1>
-                <p class="text-gray-500 my-5">Voir les développements survenus à l'ISEST dans le monde</p>
-            </div>
-            <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
-                <div class="lg:w-6/12">
-                    <img class="w-full mb-6" src="{{ url($posts[0]->image) }}">
-                    <span
-                        class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">{{ $posts[0]->category->name }}</span>
-                    <h1 class="text-gray-800 font-semibold my-3 text-xl">{{ $posts[0]->title }} </h1>
-                    <p class="text-gray-500 mb-3">{{ str($posts[0]->content)->limit(100) }}</p>
-                    <a href="{{ route('posts.show', $posts[0]->id) }}" class="underline">En savoir plus</a>
+            @if ($posts->count() > 0)
+
+
+
+                <div data-aos="zoom-in" class="mt-16 text-center">
+                    <h1 class="text-darken text-2xl font-semibold">Dernières nouvelles et ressources</h1>
+                    <p class="text-gray-500 my-5">Voir les développements survenus à l'ISEST dans le monde</p>
                 </div>
-                <div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
-                    @for ($i = 1; $i < count($posts); $i++)
-                        <div class="flex space-x-5">
-                            <div class="w-4/12">
-                                <div class="relative">
-                                    <img class="rounded-xl w-full max-h-40" src="{{ url($posts[$i]->image) }}">
-                                    <span
-                                        class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">{{ $posts[$i]->category?->name }}</span>
+                <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
+                    <div class="lg:w-6/12">
+                        <img class="w-full mb-6" src="{{ Storage::url($posts[0]->image) }}">
+                        <span
+                            class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">{{ $posts[0]->category->name }}</span>
+                        <h1 class="text-gray-800 font-semibold my-3 text-xl">{{ $posts[0]->title }} </h1>
+                        <p class="text-gray-500 mb-3">{!! str($posts[0]->content)->limit(100) !!}</p>
+                        <a href="{{ route('posts.show', $posts[0]->id) }}" class="underline">En savoir plus</a>
+                    </div>
+                    <div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
+                        @for ($i = 1; $i < count($posts); $i++)
+                            <div class="flex space-x-5">
+                                <div class="w-4/12">
+                                    <div class="relative">
+                                        <img class="rounded-xl w-full max-h-40"
+                                            src="{{ Storage::url($posts[$i]->image) }}">
+                                        <span
+                                            class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">{{ $posts[$i]->category?->name }}</span>
+                                    </div>
+                                </div>
+                                <div class="w-8/12">
+                                    <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">{{ $posts[$i]->title }}
+                                    </h1>
+                                    <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">
+                                        {!! str($posts[$i]->content)->limit(100) !!}</p>
+                                    <a href="{{ route('posts.show', $posts[$i]->id) }}" class="underline">En savoir
+                                        plus</a>
                                 </div>
                             </div>
-                            <div class="w-8/12">
-                                <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">{{ $posts[$i]->title }}
-                                </h1>
-                                <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">
-                                    {{ str($posts[$i]->content)->limit(100) }}</p>
-                                <a href="{{ route('posts.show', $posts[$i]->id) }}" class="underline">En savoir
-                                    plus</a>
-                            </div>
-                        </div>
-                    @endfor
+                        @endfor
+                    </div>
                 </div>
-            </div>
-
+            @endif
         </div>
         <!-- .container -->
 

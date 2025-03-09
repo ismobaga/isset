@@ -51,6 +51,8 @@ Route::get('/formations', ProgramListPage::class);
 Route::get('about', AboutPage::class);
 Route::get('/contact', ContactPage::class);
 Route::get('/programs/{id}', ProgramShowPage::class)->name('programs.show'); // Move this line
+Route::get('/posts', PostIndexPage::class)->name('posts.index'); // Add this line
+Route::get('/posts/{post}', PostShowPage::class)->name('posts.show'); // Add this line
 
 Route::prefix('edu')->middleware(['laravel-moodle'])->group(function () {
     // Route::middleware(['auth:sanctum', 'verified'])->group(function () {
@@ -84,14 +86,20 @@ Route::prefix('edu')->middleware(['laravel-moodle'])->group(function () {
 
     Route::get('/contact-messages', ContactMessagesPage::class)->name('contact-messages.index');
 
-    Route::get('/posts', PostIndexPage::class)->name('posts.index'); // Add this line
-    Route::get('/posts/{post}', PostShowPage::class)->name('posts.show'); // Add this line
+
 
     Route::middleware(['auth', 'verified'])->group(function () {
         // Partner routes
         Route::get('/partners', PartnerIndexPage::class)->name('partners.index');
         Route::get('/partners/create', PartnerEditPage::class)->name('partners.create');
         Route::get('/partners/{partner}/edit', PartnerEditPage::class)->name('partners.edit');
+
+        // Post management routes
+        Route::prefix('posts')->name('admin.posts.')->group(function () {
+            Route::get('/', App\Livewire\Admin\PostIndexPage::class)->name('index');
+            Route::get('/create', App\Livewire\Admin\PostFormPage::class)->name('create');
+            Route::get('/{post}/edit', App\Livewire\Admin\PostFormPage::class)->name('edit');
+        });
     });
 
     Route::fallback(function () {
