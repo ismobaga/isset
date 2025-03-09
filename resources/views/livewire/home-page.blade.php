@@ -476,47 +476,38 @@
         @endif
 
         <!-- Partners -->
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-center mb-3 text-gray-400 font-bold text-darken my-3 text-2xl">Nos partenaires</h1>
-            <p class="leading-relaxed text-gray-500 py-5 lg:pr-32  text-justify">
-                L'ISEST s'enorgueillit de collaborer avec des institutions prestigieuses, des hôpitaux de référence et
-                des organisations de santé reconnues. Ces partenariats stratégiques enrichissent notre offre de
-                formation, offrent des opportunités de stage exclusives à nos étudiants et garantissent que nos
-                programmes répondent aux besoins réels du secteur de la santé.
-            </p>
+        <div class="max-w-5xl mx-auto my-20">
+            <div data-aos="zoom-in" class="text-center">
+                <h1 class="text-darken text-3xl font-semibold">Nos partenaires</h1>
+                <p class="text-gray-500 my-5 max-w-3xl mx-auto">
+                    L'ISEST s'enorgueillit de collaborer avec des institutions prestigieuses, des hôpitaux de référence
+                    et
+                    des organisations de santé reconnues. Ces partenariats stratégiques enrichissent notre offre de
+                    formation et garantissent que nos programmes répondent aux besoins réels du secteur de la santé.
+                </p>
+            </div>
 
-            <!--HTML CODE-->
-            <div class="w-full relative">
-                <div class="swiper multiple-slide-carousel swiper-container relative">
-                    <div class="swiper-wrapper mb-16">
+            <!--Partners Carousel-->
+            <div class="w-full relative mt-12">
+                <div class="partners-carousel swiper-container">
+                    <div class="swiper-wrapper">
                         @foreach ($partners as $partner)
                             @if ($partner->display)
                                 <div class="swiper-slide">
                                     <a href="{{ $partner->website }}" target="_blank"
-                                        class="bg-indigo-50 rounded-2xl h-48 flex justify-center items-center">
-                                        {{-- <span class="text-2xl font-semibold text-indigo-600">Slide 1 </span> --}}
-                                        <img class="" src="{{ asset('storage/' . $partner->logo) }}"
+                                        class="bg-white shadow-md rounded-xl h-40 flex justify-center items-center p-6 transition-transform hover:scale-105">
+                                        <img class="max-h-28 max-w-full object-contain"
+                                            src="{{ asset('storage/' . $partner->logo) }}"
                                             alt="{{ $partner->name }}">
-
                                     </a>
                                 </div>
                             @endif
                         @endforeach
-
                     </div>
 
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-
-                    <!-- If we need navigation buttons -->
-                    {{-- <div class="swiper-button-prev"></div> --}}
-                    {{-- <div class="swiper-button-next"></div> --}}
-
-                    <!-- If we need scrollbar -->
-                    {{-- <div class="swiper-scrollbar"></div> --}}
-
+                    <!-- Pagination dots -->
+                    <div class="swiper-pagination mt-8"></div>
                 </div>
-
             </div>
         </div>
     </div>

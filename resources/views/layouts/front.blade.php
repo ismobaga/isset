@@ -70,34 +70,69 @@
 
     <!--JAVASCRIPT CODE-->
     <script>
-        var swiper = new Swiper(".multiple-slide-carousel", {
-            loop: true,
-            autoplay: true,
-            slidesPerView: 3,
-            createElements: true,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-            },
-            spaceBetween: 20,
-            navigation: {
-                nextEl: ".multiple-slide-carousel .swiper-button-next",
-                prevEl: ".multiple-slide-carousel .swiper-button-prev",
-            },
-            breakpoints: {
-                1920: {
-                    slidesPerView: 6,
-                    spaceBetween: 30
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the partners carousel
+            new Swiper(".partners-carousel", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
                 },
-                1028: {
-                    slidesPerView: 6,
-                    spaceBetween: 15
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
                 },
-                990: {
-                    slidesPerView: 1,
-                    spaceBetween: 0
+                breakpoints: {
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    // when window width is >= 640px
+                    640: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    // when window width is >= 1024px
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 30
+                    }
                 }
-            }
+            });
+
+            // Initialize any other carousels (keeping existing code)
+            var swiper = new Swiper(".multiple-slide-carousel", {
+                loop: true,
+                autoplay: true,
+                slidesPerView: 3,
+                createElements: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                },
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: ".multiple-slide-carousel .swiper-button-next",
+                    prevEl: ".multiple-slide-carousel .swiper-button-prev",
+                },
+                breakpoints: {
+                    1920: {
+                        slidesPerView: 6,
+                        spaceBetween: 30
+                    },
+                    1028: {
+                        slidesPerView: 6,
+                        spaceBetween: 15
+                    },
+                    990: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    }
+                }
+            });
         });
     </script>
 </body>
