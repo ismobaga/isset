@@ -1,10 +1,9 @@
 <!-- navbar -->
-<div x-data="{ open: false, admissionOpen: false, scrolled: false }"
-    x-init="window.addEventListener('scroll', () => { scrolled = window.pageYOffset > 20 })"
+<div x-data="{ open: false, admissionOpen: false, scrolled: false }" x-init="window.addEventListener('scroll', () => { scrolled = window.pageYOffset > 20 })"
     class="w-full sticky top-0 text-gray-700 z-50 transition-all duration-300 ease-in-out"
-    :class="{'bg-white shadow-md': scrolled, 'bg-white': !scrolled}">
+    :class="{ 'bg-white shadow-md': scrolled, 'bg-white': !scrolled }">
     <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
-        <div class="flex flex-row items-center justify-between" :class="{'py-4': scrolled, 'py-6': !scrolled}">
+        <div class="flex flex-row items-center justify-between" :class="{ 'py-4': scrolled, 'py-6': !scrolled }">
             <div class="relative md:mt-8">
                 <a href="/"
                     class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">ISEST</a>
@@ -44,7 +43,7 @@
                     'submenu' => [
                         ['label' => 'Candidature', 'url' => '/candidature'],
                         ['label' => 'Convention de stage', 'url' => '/convention-stage'],
-                        ['label' => 'Procédure d\'inscription', 'url' => '/#'],
+                        ['label' => 'Procédure d\'inscription', 'url' => '/procedure-inscription'],
                         ['label' => 'Frais de scolarité', 'url' => '/#'],
                     ],
                 ],
