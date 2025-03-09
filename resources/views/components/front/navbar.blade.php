@@ -1,5 +1,5 @@
 <!-- navbar -->
-<div x-data="{ open: false, admissionOpen: false }" class="w-full text-gray-700 z-20">
+<div x-data="{ open: false, admissionOpen: false }" class="w-full text-gray-700 z-20 bg-white">
     <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
         <div class="flex flex-row items-center justify-between py-6">
             <div class="relative md:mt-8">
@@ -43,39 +43,41 @@
             ];
         @endphp
         <nav :class="{ 'transform md:transform-none scale-y-0': !open, 'h-full': open }"
-            class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 ">
+            class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 font-bold ">
             @foreach ($menuItems as $item)
                 @if (isset($item['hasSubmenu']) && $item['hasSubmenu'])
                     <div class="group relative cursor-pointer ">
-                        <div class="flex items-center justify-between space-x-2 mt-4 ">
-                            <a class="menu-hover text-sm  lg:mx-4">
+                        <div
+                            class="flex items-center  rounded-lg justify-between space-x-1 hover:bg-slate-200 text-black">
+                            <a
+                                class="text-black px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-4 md:ml-4 hover:bg-slate-200  hover:text-gray-900 focus:outline-none focus:shadow-outline flex">
                                 {{ $item['label'] }}
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="h-6 w-6 transition-transform duration-200 -rotate-90 group-hover:rotate-180">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </span>
                             </a>
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="h-6 w-6 transition-transform duration-200 group-hover:rotate-180">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </span>
                         </div>
 
                         <div
-                            class="invisible absolute z-50 flex w-full flex-col bg-white py-1 px-4 text-gray-800 shadow-xl
+                            class="invisible absolute z-50 flex w-full flex-col bg-white py-1  text-gray-800 shadow-xl
                             opacity-0 transition-all duration-300 ease-in-out
                             group-hover:visible group-hover:opacity-100
                             group-hover:translate-y-0 translate-y-[-10px]">
                             @foreach ($item['submenu'] as $subitem)
                                 <a href="{{ $subitem['url'] }}"
-                                    class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+                                    class="px-4 y-2 block border-b w-full text-black border-gray-100 py-1 font-semibold hover:bg-slate-200   hover:text-black ">
                                     {{ $subitem['label'] }}
                                 </a>
                             @endforeach
                         </div>
                     </div>
                 @else
-                    <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-4 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+                    <a class=" text-black px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-4 md:ml-4 hover:bg-slate-200  hover:text-gray-900 focus:outline-none focus:shadow-outline"
                         href="{{ $item['url'] }}">{{ $item['label'] }}</a>
                 @endif
             @endforeach
