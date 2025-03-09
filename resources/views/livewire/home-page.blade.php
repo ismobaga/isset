@@ -192,9 +192,9 @@
                             <h3 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">Pour les
                                 etudiants
                             </h3>
-                            <button
+                            <a href="{{ route('formations') }}"
                                 class="rounded-full text-white text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out"
-                                style="background: rgba(47, 50, 125, 0.9)">Voir nos programmes</button>
+                                style="background: rgba(47, 50, 125, 0.9)">Voir nos programmes</a>
                         </div>
                     </div>
                 </div>
@@ -475,7 +475,7 @@
             </div>
         @endif
 
-        <!-- trusted by -->
+        <!-- Partners -->
         <div class="max-w-4xl mx-auto">
             <h1 class="text-center mb-3 text-gray-400 font-bold text-darken my-3 text-2xl">Nos partenaires</h1>
             <p class="leading-relaxed text-gray-500 py-5 lg:pr-32  text-justify">

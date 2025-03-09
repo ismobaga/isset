@@ -1,5 +1,5 @@
 <!-- navbar -->
-<div x-data="{ open: false, admissionOpen: false }" class="w-full text-gray-700 z-20 bg-white">
+<div x-data="{ open: false, admissionOpen: false }" class="w-full text-gray-700 z-50 bg-white">
     <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
         <div class="flex flex-row items-center justify-between py-6">
             <div class="relative md:mt-8">
@@ -26,18 +26,36 @@
         </div>
         @php
             $menuItems = [
-                ['label' => 'Accueil', 'url' => '/'],
+                [
+                    'label' => 'Groupe ISEST',
+                    'hasSubmenu' => true,
+                    'submenu' => [
+                        ['label' => 'Présentaion du Groupe ISEST', 'url' => '/presentaion-isest'],
+                        ['label' => 'Paténariats Entreprise', 'url' => '/partenariats-entreprise'],
+                    ],
+                ],
                 ['label' => 'Formations', 'url' => '/formations'],
                 [
                     'label' => 'Admission',
                     'hasSubmenu' => true,
                     'submenu' => [
                         ['label' => 'Candidature', 'url' => '/candidature'],
-                        ['label' => 'Procédure d\'inscription', 'url' => '/procedure-inscription'],
-                        ['label' => 'Frais de scolarité', 'url' => '/frais-scolarite'],
+                        ['label' => 'Convention de stage', 'url' => '/convention-stage'],
+                        ['label' => 'Procédure d\'inscription', 'url' => '/#'],
+                        ['label' => 'Frais de scolarité', 'url' => '/#'],
                     ],
                 ],
-                ['label' => 'A propos', 'url' => '/about'],
+                [
+                    'label' => 'Vie de l\'école',
+                    'hasSubmenu' => true,
+                    'submenu' => [
+                        ['label' => 'Vie étudiante', 'url' => '#'],
+                        ['label' => 'Actualités', 'url' => '/posts'],
+                        ['label' => 'Evénements', 'url' => '#'],
+                        ['label' => 'Bourses', 'url' => '#'],
+                    ],
+                ],
+
                 ['label' => 'Contact', 'url' => '/contact'],
                 ['label' => 'Moodle', 'url' => '/moodle'],
             ];

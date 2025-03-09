@@ -18,8 +18,8 @@ use App\Livewire\ProgramEditPage;
 use App\Livewire\AcademicYearIndexPage;
 use App\Livewire\AcademicYearCreatePage;
 use App\Livewire\AcademicYearEditPage;
-use App\Livewire\CandidatureIndexPage; // Add this line
-use App\Livewire\CandidatureDecisionPage; // Add this line
+use App\Livewire\CandidatureIndexPage;
+use App\Livewire\CandidatureDecisionPage;
 use App\Livewire\ProgramListPage;
 use App\Livewire\AboutPage;
 use App\Livewire\ContactPage;
@@ -27,9 +27,12 @@ use App\Livewire\ContactMessagesPage;
 use App\Livewire\PartnerEditPage;
 use App\Livewire\PartnerIndexPage;
 use App\Livewire\ProgramViewPage;
-use App\Livewire\PostIndexPage; // Add this line
-use App\Livewire\PostShowPage; // Add this line
-use App\Livewire\ProgramShowPage; // Add this line
+use App\Livewire\PostIndexPage;
+use App\Livewire\PostShowPage;
+use App\Livewire\ProgramShowPage;
+use App\Livewire\ConventionStagePage;
+use App\Livewire\PresentationIsestPage;
+use App\Livewire\BusinessPartnershipsPage; // Add this line
 
 /*
 |--------------------------------------------------------------------------
@@ -47,12 +50,15 @@ Route::redirect('/moodle', env('MOODLE_BASE_URL'));
 
 Route::get('/home', HomePage::class);
 Route::get('/candidature', CreateCandidaturePage::class);
-Route::get('/formations', ProgramListPage::class);
+Route::get('/formations', ProgramListPage::class)->name('formations');
 Route::get('about', AboutPage::class);
 Route::get('/contact', ContactPage::class);
-Route::get('/programs/{id}', ProgramShowPage::class)->name('programs.show'); // Move this line
-Route::get('/posts', PostIndexPage::class)->name('posts.index'); // Add this line
-Route::get('/posts/{post}', PostShowPage::class)->name('posts.show'); // Add this line
+Route::get('/convention-stage', ConventionStagePage::class)->name('convention-stage');
+Route::get('/programs/{id}', ProgramShowPage::class)->name('programs.show');
+Route::get('/posts', PostIndexPage::class)->name('posts.index');
+Route::get('/posts/{post}', PostShowPage::class)->name('posts.show');
+Route::get('/presentaion-isest', PresentationIsestPage::class)->name('presentaion-isest');
+Route::get('/partenariats-entreprise', BusinessPartnershipsPage::class)->name('partenariats-entreprise'); // Add this line
 
 Route::prefix('edu')->middleware(['laravel-moodle'])->group(function () {
     // Route::middleware(['auth:sanctum', 'verified'])->group(function () {
