@@ -7,7 +7,7 @@
 
         <div class="bg-cream">
             <div class="z-0 bacdrop w-screen h-screen inset-0 absolute"></div>
-            <div class="max-w-screen-xl min-h-screen px-8 mx-auto flex flex-col lg:flex-row items-start">
+            <div class="z-20 max-w-screen-xl min-h-screen px-8 mx-auto flex flex-col lg:flex-row items-start">
                 <!--Left Col-->
                 <div
                     class="flex flex-col w-full lg:w-6/12 justify-center lg:pt-24 items-start text-center lg:text-left mb-5 md:mb-0">
