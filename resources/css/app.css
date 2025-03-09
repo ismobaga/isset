@@ -25,14 +25,14 @@ p{
 /*primary color*/
 .bg-cream {
     /* background-color: #FFF2E1; */
-    @apply bg-emerald-100;
+    /* @apply bg-emerald-100; */
 
 }
-.bacdrop {
+.bacdropi {
     /* @apply backdrop-blur-md; */
-    background-image: url('/images/isest/1.jpeg');
+    background-image: url('/images/isest/bon.jpeg');
 
-    @apply bg-contain md:bg-cover bg-no-repeat blur-md;
+    @apply bg-contain md:bg-cover bg-no-repeat ;
 }
 
 /*font*/
