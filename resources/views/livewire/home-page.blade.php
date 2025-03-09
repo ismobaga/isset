@@ -6,18 +6,20 @@
     <x-slot:header>
 
         <div class="bg-cream">
+            <div class="z-0 bacdrop w-screen h-screen inset-0 absolute"></div>
             <div class="max-w-screen-xl min-h-screen px-8 mx-auto flex flex-col lg:flex-row items-start">
                 <!--Left Col-->
                 <div
                     class="flex flex-col w-full lg:w-6/12 justify-center lg:pt-24 items-start text-center lg:text-left mb-5 md:mb-0">
                     <h1 data-aos="fade-right" data-aos-once="true"
-                        class="my-4 text-5xl font-bold leading-tight text-darken">
+                        class="my-4 text-5xl font-bold leading-tight text-darken text-bold">
                         Bienvenue à l'Institut Supérieur d'Excellence en Santé de <span
-                            class="text-emerald-500">TOUBA</span>
+                            class="text-emerald-700">TOUBA</span>
 
 
                     </h1>
-                    <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300" class="leading-normal text-2xl mb-8">
+                    <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
+                        class="leading-normal text-2xl mb-8 text-white">
                         L'ISEST est une institution d'enseignement supérieur dédiée à former les futurs professionnels
                         de la
                         santé avec un engagement envers l'excellence académique et l'innovation dans le domaine médical.
@@ -48,9 +50,9 @@
                     </div>
                 </div>
                 <!--Right Col-->
-                <div class="w-full lg:w-6/12 lg:-mt-10 relative" id="girl">
-                    <img data-aos="fade-up" data-aos-once="true" class="w-10/12 mx-auto 2xl:-mb-20"
-                        src="images/pharm-z.png" />
+                <div class="hidden w-full lg:w-6/12 lg:-mt-10 relative" id="girl">
+                    {{-- <img data-aos="fade-up" data-aos-once="true" class="w-10/12 mx-auto 2xl:-mb-20" --}}
+                    {{-- src="images/isest/1.jpeg" /> --}}
                     <!-- calendar -->
                     <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true"
                         class="absolute top-20 -left-6 sm:top-32 sm:left-10 md:top-40 md:left-16 lg:-left-0 lg:top-52 floating-4">

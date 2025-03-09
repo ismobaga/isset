@@ -26,6 +26,13 @@ p{
 .bg-cream {
     /* background-color: #FFF2E1; */
     @apply bg-emerald-100;
+
+}
+.bacdrop {
+    /* @apply backdrop-blur-md; */
+    background-image: url('/images/isest/1.jpeg');
+
+    @apply bg-contain md:bg-cover bg-no-repeat blur-md;
 }
 
 /*font*/
@@ -64,6 +71,7 @@ body {
 }
 .text-darken {
     color: #2F327D;
+
 }
 
 .primary-color {

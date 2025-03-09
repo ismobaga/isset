@@ -1,5 +1,5 @@
 <!-- navbar -->
-<div x-data="{ open: false, admissionOpen: false }" class="w-full text-gray-700 bg-cream">
+<div x-data="{ open: false, admissionOpen: false }" class="w-full text-gray-700 z-20">
     <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
         <div class="flex flex-row items-center justify-between py-6">
             <div class="relative md:mt-8">
