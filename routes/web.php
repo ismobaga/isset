@@ -32,7 +32,8 @@ use App\Livewire\PostShowPage;
 use App\Livewire\ProgramShowPage;
 use App\Livewire\ConventionStagePage;
 use App\Livewire\PresentationIsestPage;
-use App\Livewire\BusinessPartnershipsPage; // Add this line
+use App\Livewire\BusinessPartnershipsPage;
+use App\Livewire\StudentLifePage;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,7 @@ Route::get('/posts', PostIndexPage::class)->name('posts.index');
 Route::get('/posts/{post}', PostShowPage::class)->name('posts.show');
 Route::get('/presentaion-isest', PresentationIsestPage::class)->name('presentaion-isest');
 Route::get('/partenariats-entreprise', BusinessPartnershipsPage::class)->name('partenariats-entreprise'); // Add this line
+Route::get('/vie-etudiante', StudentLifePage::class)->name('vie-etudiante');
 
 Route::prefix('edu')->middleware(['laravel-moodle'])->group(function () {
     // Route::middleware(['auth:sanctum', 'verified'])->group(function () {

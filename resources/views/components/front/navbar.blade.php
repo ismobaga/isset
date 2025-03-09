@@ -52,7 +52,7 @@
                     'label' => 'Vie de l\'école',
                     'hasSubmenu' => true,
                     'submenu' => [
-                        ['label' => 'Vie étudiante', 'url' => '#'],
+                        ['label' => 'Vie étudiante', 'url' => '/vie-etudiante'],
                         ['label' => 'Actualités', 'url' => '/posts'],
                         ['label' => 'Evénements', 'url' => '#'],
                         ['label' => 'Bourses', 'url' => '#'],
