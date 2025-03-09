@@ -1,7 +1,10 @@
 <!-- navbar -->
-<div x-data="{ open: false, admissionOpen: false }" class="w-full text-gray-700 z-50 bg-white">
+<div x-data="{ open: false, admissionOpen: false, scrolled: false }"
+    x-init="window.addEventListener('scroll', () => { scrolled = window.pageYOffset > 20 })"
+    class="w-full sticky top-0 text-gray-700 z-50 transition-all duration-300 ease-in-out"
+    :class="{'bg-white shadow-md': scrolled, 'bg-white': !scrolled}">
     <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
-        <div class="flex flex-row items-center justify-between py-6">
+        <div class="flex flex-row items-center justify-between" :class="{'py-4': scrolled, 'py-6': !scrolled}">
             <div class="relative md:mt-8">
                 <a href="/"
                     class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">ISEST</a>
@@ -114,5 +117,14 @@
 
     .group .absolute {
         transition-delay: 0.3s;
+    }
+
+    /* Add new styles for navbar transition */
+    .sticky {
+        transition: all 0.3s ease;
+    }
+
+    .shadow-md {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
 </style>
