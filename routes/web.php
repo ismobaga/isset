@@ -43,6 +43,7 @@ use App\Livewire\ProgramShowPage; // Add this line
 */
 
 Route::redirect('/', 'home');
+Route::redirect('/moodle', env('MOODLE_BASE_URL'));
 
 Route::get('/home', HomePage::class);
 Route::get('/candidature', CreateCandidaturePage::class);

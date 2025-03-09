@@ -39,37 +39,39 @@
                 ],
                 ['label' => 'A propos', 'url' => '/about'],
                 ['label' => 'Contact', 'url' => '/contact'],
+                ['label' => 'Moodle', 'url' => '/moodle'],
             ];
         @endphp
         <nav :class="{ 'transform md:transform-none scale-y-0': !open, 'h-full': open }"
             class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 ">
             @foreach ($menuItems as $item)
                 @if (isset($item['hasSubmenu']) && $item['hasSubmenu'])
-                    <div class="relative group" x-data="{ open: false }" @mouseenter="open = !open"
-                        @mouseleave="open = false">
-                        <button
-                            class="flex items-center px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-4 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline">
-                            {{ $item['label'] }}
-                            <svg :class="open ? '' : '-rotate-90'" class="w-4 h-4 ml-1 "
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                            x-transition:enter-start="transform opacity-0 scale-95"
-                            x-transition:enter-end="transform opacity-100 scale-100"
-                            x-transition:leave="transition ease-in duration-75"
-                            x-transition:leave-start="transform opacity-100 scale-100"
-                            x-transition:leave-end="transform opacity-0 scale-95"
-                            class="absolute right-0 w-48 mt-2 origin-top-right bg-white rounded-md shadow-lg md:w-56">
-                            <div class="py-1 rounded-md bg-white shadow-xs">
-                                @foreach ($item['submenu'] as $subitem)
-                                    <a href="{{ $subitem['url'] }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{{ $subitem['label'] }}</a>
-                                @endforeach
-                            </div>
+                    <div class="group relative cursor-pointer ">
+                        <div class="flex items-center justify-between space-x-5 mt-4 ">
+                            <a class="menu-hover text-base font-medium  lg:mx-4">
+                                {{ $item['label'] }}
+                            </a>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor"
+                                    class="h-6 w-6 transition-transform duration-200 group-hover:rotate-180">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </span>
+                        </div>
+
+                        <div
+                            class="invisible absolute z-50 flex w-full flex-col bg-white py-1 px-4 text-gray-800 shadow-xl
+                            opacity-0 transition-all duration-300 ease-in-out
+                            group-hover:visible group-hover:opacity-100
+                            group-hover:translate-y-0 translate-y-[-10px]">
+                            @foreach ($item['submenu'] as $subitem)
+                                <a href="{{ $subitem['url'] }}"
+                                    class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+                                    {{ $subitem['label'] }}
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 @else
@@ -77,8 +79,20 @@
                         href="{{ $item['url'] }}">{{ $item['label'] }}</a>
                 @endif
             @endforeach
+
             <a class="px-10 py-3 mt-2 text-sm text-center bg-emerald-500 text-white rounded-full md:mt-4 md:ml-4"
                 href="/edu">EduConnect</a>
         </nav>
     </div>
 </div>
+
+<style>
+    /* Add this style section at the bottom of the file */
+    .group:hover .absolute {
+        transition-delay: 0s;
+    }
+
+    .group .absolute {
+        transition-delay: 0.3s;
+    }
+</style>

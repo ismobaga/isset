@@ -39,12 +39,11 @@
                                 </svg>
                             </button>
 
-                            <span class="cursor-pointer" wire:click="$toggle('showVideoModal')">Regarder video</span>
+                            {{-- <span class="cursor-pointer" wire:click="$toggle('showVideoModal')">Regarder video</span>
 
                             <x-modal id="view-video">
 
-                                {{-- Contenu du modal --}}
-                            </x-modal>
+                            </x-modal> --}}
                         </div>
                     </div>
                 </div>
