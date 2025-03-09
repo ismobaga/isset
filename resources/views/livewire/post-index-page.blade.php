@@ -1,4 +1,3 @@
-<x-app-layout>
     <div class="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-x-hidden">
         <h1 class="text-darken text-2xl font-semibold text-center my-8">Tous les articles</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -19,4 +18,3 @@
             {{ $posts->links() }}
         </div>
     </div>
-</x-app-layout>

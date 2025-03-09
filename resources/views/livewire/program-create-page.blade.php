@@ -35,8 +35,14 @@
                 <div>
                     <label for="description"
                         class="block text-sm font-medium text-gray-700 dark:text-gray-300">Description</label>
-                    <textarea id="description" wire:model="description"
-                        class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-700 rounded-md"></textarea>
+                    @livewire('livewire-quill', [
+                        'quillId' => 'description',
+                        'data' => $description,
+                        'placeholder' => 'Type something...',
+                        'classes' => 'bg-white text-primary w-full',
+                        // optional classes that can be added to the editor, that are added for this instance only
+                        // 'mergeToolbar' => true, // optional, if you want to merge the toolbar with the default toolbar configuration,
+                    ])
                     @error('description')
                         <span class="text-red-500 text-xs">{{ $message }}</span>
                     @enderror
@@ -69,8 +75,10 @@
                     @enderror
                 </div>
                 <div>
-                    <label for="programInfoPdf" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Program Info PDF</label>
-                    <input type="file" id="programInfoPdf" wire:model="programInfoPdf" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-700 rounded-md">
+                    <label for="programInfoPdf"
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300">Program Info PDF</label>
+                    <input type="file" id="programInfoPdf" wire:model="programInfoPdf"
+                        class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-700 rounded-md">
                     @error('programInfoPdf')
                         <span class="text-red-500 text-xs">{{ $message }}</span>
                     @enderror
