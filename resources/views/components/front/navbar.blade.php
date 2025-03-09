@@ -47,8 +47,8 @@
             @foreach ($menuItems as $item)
                 @if (isset($item['hasSubmenu']) && $item['hasSubmenu'])
                     <div class="group relative cursor-pointer ">
-                        <div class="flex items-center justify-between space-x-5 mt-4 ">
-                            <a class="menu-hover text-base font-medium  lg:mx-4">
+                        <div class="flex items-center justify-between space-x-2 mt-4 ">
+                            <a class="menu-hover text-sm  lg:mx-4">
                                 {{ $item['label'] }}
                             </a>
                             <span>
