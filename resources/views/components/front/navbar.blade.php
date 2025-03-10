@@ -1,6 +1,5 @@
 <!-- navbar -->
-<div x-data="{ open: false, admissionOpen: false, scrolled: false }" 
-    class="w-full sticky top-0 text-gray-700 z-50 transition-all duration-300 ease-in-out"
+<div x-data="{ open: false, admissionOpen: false, scrolled: false }" class="w-full sticky top-0 text-gray-700 z-50 transition-all duration-300 ease-in-out"
     :class="{ 'bg-white shadow-md': scrolled, 'bg-white': !scrolled }">
     <div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
         <div class="flex flex-row items-center justify-between" :class="{ 'py-4': scrolled, 'py-6': !scrolled }">
@@ -44,7 +43,7 @@
                         ['label' => 'Candidature', 'url' => '/candidature'],
                         ['label' => 'Convention de stage', 'url' => '/convention-stage'],
                         ['label' => 'Procédure d\'inscription', 'url' => '/procedure-inscription'],
-                        ['label' => 'Frais de scolarité', 'url' => '/#'],
+                        ['label' => 'Frais de scolarité', 'url' => '/frais-scolarite'],
                     ],
                 ],
                 [
@@ -84,7 +83,7 @@
                         </div>
 
                         <div
-                            class="invisible absolute z-50 flex w-full flex-col bg-white py-1  text-gray-800 shadow-xl
+                            class="invisible absolute z-50 flex whitespace-nowrap min-w-max flex-col bg-white py-1  text-gray-800 shadow-xl
                             opacity-0 transition-all duration-300 ease-in-out
                             group-hover:visible group-hover:opacity-100
                             group-hover:translate-y-0 translate-y-[-10px]">

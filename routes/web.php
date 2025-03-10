@@ -35,6 +35,7 @@ use App\Livewire\PresentationIsestPage;
 use App\Livewire\BusinessPartnershipsPage;
 use App\Livewire\StudentLifePage;
 use App\Livewire\InscriptionProcedurePage;
+use App\Livewire\TuitionFeesPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,7 @@ Route::get('/presentaion-isest', PresentationIsestPage::class)->name('presentaio
 Route::get('/partenariats-entreprise', BusinessPartnershipsPage::class)->name('partenariats-entreprise'); // Add this line
 Route::get('/vie-etudiante', StudentLifePage::class)->name('vie-etudiante');
 Route::get('/procedure-inscription', InscriptionProcedurePage::class)->name('procedure-inscription');
+Route::get('/frais-scolarite', TuitionFeesPage::class)->name('frais-scolarite');
 
 Route::prefix('edu')->middleware(['laravel-moodle'])->group(function () {
     // Route::middleware(['auth:sanctum', 'verified'])->group(function () {
