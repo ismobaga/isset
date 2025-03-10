@@ -11,7 +11,7 @@
             <div class="max-w-4xl mx-auto mb-16">
                 <h2 class="text-2xl font-semibold text-gray-800 mb-6">Notre Histoire</h2>
                 <p class="text-gray-600 mb-6">
-                    L'Institut Supérieur d'Etudes Scientifiques et Techniques (ISEST) est un établissement
+                    L'Institut Supérieur d'Excellence en Santé de TOUBA (ISEST) est un établissement
                     d'enseignement supérieur fondé avec l'objectif de contribuer au développement de l'enseignement
                     et de la recherche scientifique et technique dans notre pays.
                 </p>
@@ -35,8 +35,8 @@
                     </div>
                     <div class="md:w-2/3">
                         <p class="text-gray-600 mb-4 italic">
-                            "Je suis honoré de vous accueillir à l'Institut Supérieur d'Etudes Scientifiques et
-                            Techniques (ISEST).
+                            "Je suis honoré de vous accueillir à l'Institut Supérieur d'Excellence en Santé de TOUBA
+                            (ISEST).
                             Notre établissement s'engage à offrir une formation de qualité qui répond aux besoins du
                             marché
                             et prépare nos étudiants à exceller dans leur parcours professionnel.
