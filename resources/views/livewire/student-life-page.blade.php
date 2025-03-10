@@ -40,7 +40,7 @@
                 </div>
                 <div class="order-1 md:order-2">
                     <div class="rounded-lg overflow-hidden shadow-lg h-full">
-                        <img src="https://placehold.co/600x400" alt="Vie de campus" class="w-full h-full object-cover">
+                        <img src="/images/isest/1sante.jpg" alt="Vie de campus" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
